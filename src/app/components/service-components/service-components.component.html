@@ -1,0 +1,10 @@
+<!-- Các dịch vụ nổi bật -->
+<section class="services-section">
+  <div class="service-card" *ngFor="let blog of blogList.slice(0, 4)" (click)="goToBlogDetail(blog.id)">
+    <img [src]="blog.hinhanh" alt="Hình ảnh dịch vụ">
+    <button>{{ blog.tieude }}</button>
+  </div>
+</section>
+
+
+

@@ -1,0 +1,195 @@
+section.scroll-fade-in.horizontal-section {
+  background : white;
+  /* xanh lá nhạt */
+  padding    : 0px;
+  margin     : 0px;
+  position   : relative;
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  color      : #2e4f35;
+  /* xanh đậm hơn cho chữ */
+}
+
+.background-overlay {
+  text-align: center;
+}
+
+.main-title {
+  font-size    : 2.5rem;
+  font-weight  : 600;
+  color        : #004d40;
+  /* SeaGreen */
+  text-shadow  : 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
+  /* giảm từ mặc định ~20px xuống còn 10px hoặc 0 nếu muốn sát */
+  margin-top   : 30px;
+}
+
+.paged-container {
+  display        : flex;
+  overflow       : hidden;
+  justify-content: center;
+}
+
+.paged-slide {
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: center;
+  transition     : transform 0.5s ease;
+  min-width      : 100%;
+}
+
+.card {
+  background-color: #e6f5e6;
+  border-radius   : 16px;
+  box-shadow      : 0 6px 20px rgba(0, 128, 0, 0.05);
+  margin          : 10px;
+  padding         : 20px;
+  width           : 280px;
+  min-height      : 320px;
+  display         : flex;
+  flex-direction  : column;
+  justify-content : space-between;
+  transition      : transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size    : 20px;
+  color        : black;
+  /* xanh dịu */
+  margin-bottom: 10px;
+  text-align   : center;
+}
+
+.description-scroll {
+  max-height   : 80px;
+  overflow-y   : auto;
+  margin-bottom: 15px;
+  font-size    : 14px;
+  color        : #444;
+}
+
+.description-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.description-scroll::-webkit-scrollbar-thumb {
+  background-color: black;
+  /* pastel xanh */
+  border-radius   : 8px;
+}
+
+.goi-wrapper ul {
+  list-style: none;
+  padding   : 0;
+  margin    : 0;
+}
+
+.goi-wrapper li {
+  padding        : 8px 0;
+  border-bottom  : 1px solid #d8f0d8;
+  font-size      : 15px;
+  color          : #444;
+  display        : flex;
+  justify-content: space-between;
+}
+
+.goi-wrapper strong {
+  color: #d35400;
+  /* SeaGreen */
+}
+
+.paging-buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.paging-buttons button {
+  background-color: #d4edda;
+  border          : none;
+  color           : #2e7d32;
+  font-size       : 20px;
+  padding         : 10px 15px;
+  margin          : 0 10px;
+  border-radius   : 8px;
+  cursor          : pointer;
+  transition      : background 0.3s ease;
+}
+
+.paging-buttons button:disabled {
+  background-color: #f0f0f0;
+  color           : #aaa;
+  cursor          : not-allowed;
+}
+
+.paging-buttons button:hover:not(:disabled) {
+  background-color: #b2dfdb;
+}
+
+.paged-slide {
+  display   : none;
+  opacity   : 0;
+  transition: opacity 0.5s ease;
+}
+
+.paged-slide.active {
+  display: flex;
+  opacity: 1;
+}
+
+.scroll-fade-in {
+  opacity   : 0;
+  transform : translateY(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade-in.show {
+  opacity  : 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size : 1.8rem;
+    margin-top: 20px;
+  }
+
+  .paged-container {
+    flex-direction: column;
+    padding       : 0 10px;
+  }
+
+  .paged-slide {
+    flex-direction: column;
+    align-items   : center;
+  }
+
+  .card {
+    width     : 90%;
+    min-height: auto;
+    padding   : 15px;
+  }
+
+  .description-scroll {
+    max-height: 100px;
+    font-size : 13px;
+  }
+
+  .goi-wrapper li {
+    font-size     : 14px;
+    flex-direction: column;
+    align-items   : flex-start;
+  }
+
+  .paging-buttons {
+    margin-top: 20px;
+  }
+
+  .paging-buttons button {
+    font-size: 16px;
+    padding  : 8px 12px;
+  }
+}

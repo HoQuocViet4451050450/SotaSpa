@@ -1,0 +1,288 @@
+* {
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+
+}
+
+.about-us-wrapper {
+  background-color: white;
+  padding         : 0px 20px;
+  margin-top      : 30px;
+  /* Khoảng cách toàn phần đầu tiên */
+}
+
+/* Bố cục phần about-us */
+.about-us {
+  display        : flex;
+  justify-content: space-between;
+  gap            : 30px;
+  /* Khoảng cách giữa .about-us-text và .about-us-image */
+  align-items    : center;
+  flex-wrap      : wrap;
+  /* Hỗ trợ responsive */
+  margin-top     : 30px;
+  /* Khoảng cách giữa các phần about-us */
+
+}
+
+.mobile-controls button {
+  touch-action: manipulation;
+  /* ngăn zoom/double-tap */
+}
+
+/* Nội dung text */
+.about-us-text {
+  flex     : 1;
+  min-width: 280px;
+}
+
+.about-us-text h3 {
+  font-size    : 1.4rem;
+  color        : orange;
+  margin-bottom: 10px;
+}
+
+.about-us-text h1 {
+  font-size    : 2.5rem;
+  color        : #004d40;
+  margin-bottom: 20px;
+}
+
+.about-us-text p {
+  font-size    : 1rem;
+  color        : #222;
+  line-height  : 1.6;
+  margin-bottom: 15px;
+  margin-top   : 0px;
+}
+
+.about-us-text .highlight {
+  color      : #4285f4;
+  font-weight: bold;
+}
+
+/* Hình ảnh */
+.about-us-image {
+  flex      : 1;
+  min-width : 280px;
+  text-align: center;
+}
+
+.about-us-image img {
+  width        : 100%;
+  max-height   : 1000px;
+  object-fit   : cover;
+  border-radius: 8px;
+}
+
+.about-us-image canvas {
+  width           : 100%;
+  max-height      : 500px;
+  border-radius   : 8px;
+  background-color: black;
+}
+
+.services-grid {
+  display              : grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap                  : 20px;
+  margin-top           : 15px;
+}
+
+.service-item {
+  display         : flex;
+  align-items     : flex-start;
+  background-color: #f7f7f7;
+  padding         : 15px;
+  border-radius   : 10px;
+  transition      : transform 0.2s ease;
+}
+
+.service-item:hover {
+  transform       : translateY(-5px);
+  background-color: #eef4e8;
+}
+
+.service-item span {
+  font-size   : 28px;
+  margin-right: 15px;
+  color       : darkolivegreen;
+}
+
+.service-item strong {
+  display  : block;
+  font-size: 16px;
+  color    : #333;
+}
+
+.service-item p {
+  margin   : 5px 0 0;
+  color    : #666;
+  font-size: 14px;
+}
+
+.contact-columns {
+  display              : grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap                  : 24px;
+  margin-top           : 24px;
+}
+
+.contact-item {
+  background   : #f7f7f7;
+  padding      : 5px;
+  border-radius: 8px;
+  box-shadow   : 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-item strong {
+  display      : block;
+  font-size    : 1.1rem;
+  margin-bottom: 8px;
+  color        : #1c3d2f;
+}
+
+.contact-item a {
+  color          : black;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* Hiệu ứng cuộn */
+.scroll-fade-in {
+  opacity   : 0;
+  transform : translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-fade-in.show {
+  opacity  : 1;
+  transform: translateY(0);
+}
+
+.mobile-controls {
+  display        : flex;
+  justify-content: center;
+  gap            : 20px;
+  margin-top     : 25px;
+}
+
+.mobile-controls button {
+  padding         : 10px 20px;
+  font-size       : 1.2rem;
+  border          : none;
+  border-radius   : 8px;
+  background-color: #004d40;
+  color           : white;
+  cursor          : pointer;
+  transition      : background-color 0.3s ease;
+}
+
+.mobile-controls button:hover {
+  background-color: #00695c;
+}
+
+.myfuture {
+  max-width  : 800px;
+  margin     : 30px auto;
+  text-align : center;
+  font-size  : 18px;
+  line-height: 1.8;
+  color      : #444;
+}
+
+.myfuture p {
+  margin-top   : 0px;
+  margin-bottom: 20px;
+}
+
+.line-divider {
+  width           : 80px;
+  /* Độ dài đường kẻ */
+  height          : 3px;
+  /* Độ dày */
+  background-color: #004d40;
+  /* Màu sắc */
+  margin          : 40px auto;
+  /* Cách trên/dưới và căn giữa */
+  border-radius   : 3px;
+  /* Bo góc nhẹ */
+}
+
+/* Responsive Mobile */
+@media screen and (max-width: 600px) {
+
+  /* Tăng padding mobile */
+  .about-us-wrapper {
+    padding: 20px 15px;
+  }
+
+  /* Căn giữa layout */
+  .about-us {
+    flex-direction: column;
+    text-align    : center;
+    margin-top    : 30px;
+    /* vẫn giữ 30px cho từng phần */
+  }
+
+  .about-us-text h1 {
+    font-size: 2rem;
+  }
+
+  .about-us-text p {
+    font-size: 0.95rem;
+  }
+
+  .about-us-image img {
+    max-height: 350px;
+  }
+
+  .about-us-image canvas {
+    max-height: 350px;
+  }
+
+  .mobile-controls {
+    display        : flex;
+    justify-content: center;
+    gap            : 10px;
+    margin-top     : 10px;
+  }
+
+  .mobile-controls button {
+    padding         : 10px 20px;
+    font-size       : 1.2rem;
+    border          : none;
+    border-radius   : 8px;
+    background-color: #004d40;
+    color           : white;
+    cursor          : pointer;
+    transition      : background-color 0.3s ease;
+  }
+
+  .mobile-controls button:hover {
+    background-color: #00695c;
+  }
+
+  .contact-columns {
+    grid-template-columns: 1fr;
+    /* Chuyển thành 1 cột trên mobile */
+    gap                  : 16px;
+  }
+
+  .contact-item {
+    padding   : 10px;
+    /* Tăng khoảng cách nội dung cho dễ đọc */
+    text-align: center;
+    /* Căn giữa nội dung nếu muốn */
+  }
+
+  .contact-item strong {
+    font-size: 1rem;
+  }
+
+  .contact-item a {
+    font-size: 0.95rem;
+  }
+}

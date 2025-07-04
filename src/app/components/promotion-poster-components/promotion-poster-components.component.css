@@ -1,0 +1,264 @@
+.promotion-container {
+  padding    : 20px;
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+}
+
+.promotion-grid {
+  display              : grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap                  : 20px;
+}
+
+.promotion-card {
+  border    : 1px solid #ccc;
+  padding   : 0;
+  background: #fff;
+  transition: transform 0.3s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.promotion-card:hover {
+  transform : translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.promotion-image {
+  width           : 100%;
+  height          : 200px;
+  object-fit      : cover;
+  background-color: #eee;
+}
+
+.promotion-content-wrapper {
+  padding: 16px;
+}
+
+.promotion-title {
+  font-size  : 18px;
+  font-weight: bold;
+  color      : #004d40;
+  margin-top : 10px;
+}
+
+.promotion-meta {
+  font-size    : 14px;
+  color        : #666;
+  margin-bottom: 10px;
+}
+
+.like-button {
+  background: none;
+  color     : #e91e63;
+  cursor    : pointer;
+  font-size : 14px;
+}
+
+.promotion-subtitle {
+  margin-bottom: 10px;
+}
+
+.promotion-content {
+  font-size: 14px;
+  color    : #444;
+}
+
+.pagination {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.pagination button {
+  padding         : 8px 16px;
+  margin          : 0 6px;
+  border          : none;
+  background-color: #004d40;
+  color           : white;
+  border-radius   : 6px;
+  cursor          : pointer;
+  font-size       : 14px;
+  transition      : background-color 0.3s ease, transform 0.2s ease;
+  box-shadow      : 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.pagination button:hover {
+  background-color: #00695c;
+  transform       : translateY(-2px);
+}
+
+.pagination button:disabled {
+  background-color: #a7a7a7;
+  color           : #eeeeee;
+  cursor          : not-allowed;
+  box-shadow      : none;
+}
+
+.pagination button.active {
+  background-color: #26a69a;
+  color           : white;
+}
+
+.intro-section {
+  text-align         : center;
+  display            : flex;
+  flex-direction     : column;
+  align-items        : center;
+  justify-content    : center;
+  padding            : 20px 20px;
+  margin             : 0 auto;
+  background-image   : url('https://i.pinimg.com/736x/a5/b1/2e/a5b12ebca9f10b96c0290a76e1e8883e.jpg');
+  background-size    : cover;
+  background-position: center;
+  background-repeat  : no-repeat;
+}
+
+.intro-section h2 {
+  font-weight  : normal;
+  font-size    : 25px;
+  font-family  : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  margin-top   : 8px;
+  margin-bottom: 8px;
+}
+
+.intro-section h1 {
+  font-weight  : bold;
+  font-size    : 40px;
+  color        : #b28d5f;
+  font-family  : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  margin-top   : 8px;
+  margin-bottom: 8px;
+}
+
+.intro-section h4 {
+  font-weight  : normal;
+  font-size    : 20px;
+  font-family  : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  margin-top   : 0px;
+  margin-bottom: 0px;
+  color        : white;
+}
+
+.scroll-fade-in {
+  opacity   : 0;
+  transform : translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade-in.active {
+  opacity  : 1;
+  transform: translateY(0);
+}
+
+/* Responsive tablet */
+@media (max-width: 992px) {
+  .promotion-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .promotion-container {
+    padding: 10px;
+  }
+
+  .promotion-grid {
+    grid-template-columns: 1fr;
+    gap                  : 15px;
+  }
+
+  .promotion-card {
+    padding: 12px;
+  }
+
+  .promotion-image {
+    height: 160px;
+  }
+
+  .promotion-title {
+    font-size: 16px;
+  }
+
+  .promotion-meta {
+    font-size: 13px;
+  }
+
+  .pagination button {
+    padding  : 6px 10px;
+    font-size: 12px;
+    margin   : 0 4px;
+  }
+
+
+  .intro-section {
+    padding: 15px 10px;
+  }
+
+  .intro-section h2 {
+    font-size: 20px;
+  }
+
+  .intro-section h1 {
+    font-size: 28px;
+  }
+
+  .intro-section h4 {
+    font-size: 16px;
+  }
+}
+
+/* PHẦN GIỚI THIỆU (CÓ BACKGROUND ẢNH) */
+.intro-banner {
+  position     : relative;
+  text-align   : center;
+  padding      : 40px 20px;
+  margin-top   : 30px;
+  margin-bottom: 20px;
+
+  color      : white;
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  background : url('https://i.pinimg.com/736x/a5/b1/2e/a5b12ebca9f10b96c0290a76e1e8883e.jpg') center/cover no-repeat;
+  overflow   : hidden;
+}
+
+.intro-banner::before {
+  content         : "";
+  position        : absolute;
+  inset           : 0;
+  background-color: rgba(26, 25, 25, 0.8);
+  z-index         : 1;
+}
+
+.intro-banner h1,
+.intro-banner h2,
+.intro-banner h4,
+.intro-banner h5 {
+  position   : relative;
+  z-index    : 2;
+  margin     : 8px 0;
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+}
+
+.intro-banner h2 {
+  font-weight: normal;
+  font-size  : 25px;
+}
+
+.intro-banner h1 {
+  font-weight: bold;
+  font-size  : 40px;
+  color      : #b28d5f;
+}
+
+.intro-banner h4 {
+  font-weight: normal;
+  font-size  : 20px;
+  margin     : 0;
+}
+
+.breadcrumb .white {
+  color: #fff;
+}
+
+.breadcrumb .yellow {
+  color: #f1c40f;
+}

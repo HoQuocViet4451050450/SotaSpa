@@ -1,0 +1,6 @@
+<div *ngIf="showPopup" class="popup-overlay">
+  <div class="popup-content">
+    <p>Trang web này đã được truy cập <strong>{{ visitCount }}</strong> lần!</p>
+    <button (click)="closePopup()">Đóng</button>
+  </div>
+</div>

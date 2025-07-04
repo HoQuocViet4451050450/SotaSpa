@@ -1,0 +1,141 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<app-headerbest-datlich-components></app-headerbest-datlich-components>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đặt Lịch Hẹn Spa & Beauty Online tại Sota | Nhanh chóng & Tiện lợi</title>
+
+  <meta name="description" content="Đặt lịch hẹn chăm sóc da, massage, trị liệu tại Sota Spa & Beauty một cách nhanh chóng và tiện lợi. Chọn chi nhánh, khung giờ và dịch vụ yêu thích của bạn ngay hôm nay!">
+  <meta name="keywords" content="đặt lịch spa, đặt lịch online, đặt lịch làm đẹp, booking spa, Sota Spa, hẹn lịch spa, chăm sóc da, massage, trị liệu">
+  <meta name="author" content="Sota Spa">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="http://localhost:4200/dat-lich" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:4200/dat-lich">
+  <meta property="og:title" content="Đặt Lịch Hẹn Spa & Beauty Online tại Sota | Nhanh chóng & Tiện lợi">
+  <meta property="og:description" content="Đặt lịch hẹn chăm sóc da, massage, trị liệu tại Sota Spa & Beauty một cách nhanh chóng và tiện lợi. Chọn chi nhánh, khung giờ và dịch vụ yêu thích của bạn ngay hôm nay!">
+  <meta property="og:image" content="https://yourdomain.com/assets/images/sota-spa-booking-og-image.jpg">
+  <meta property="og:site_name" content="Sota – Spa & Beauty">
+  <meta property="og:locale" content="vi_VN">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="http://localhost:4200/dat-lich">
+  <meta name="twitter:title" content="Đặt Lịch Hẹn Spa & Beauty Online tại Sota | Nhanh chóng & Tiện lợi">
+  <meta name="twitter:description" content="Đặt lịch hẹn chăm sóc da, massage, trị liệu tại Sota Spa & Beauty một cách nhanh chóng và tiện lợi. Chọn chi nhánh, khung giờ và dịch vụ yêu thích của bạn ngay hôm nay!">
+  <meta name="twitter:image" content="https://yourdomain.com/assets/images/sota-spa-booking-twitter-image.jpg">
+</head>
+
+<body>
+    <form class="booking-form">
+        <h2>Đặt Lịch</h2>
+        <div class="booking-grid">
+            <div>
+                <label>Họ và tên</label>
+                <input type="text" name="hovaten" [(ngModel)]="formData.hovaten" />
+            </div>
+            <div>
+                <label>Số điện thoại</label>
+                <input type="tel" name="sodienthoai" [(ngModel)]="formData.sodienthoai" />
+            </div>
+            <div>
+                <label>Giới tính</label>
+                <select name="gioitinh" [(ngModel)]="formData.gioitinh">
+                    <option value="">-- Chọn --</option>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+            </div>
+            <div>
+                <label for="branch-select">Chi nhánh</label>
+                <select name="chinhanh" id="branch-select" required [(ngModel)]="formData.chinhanh">
+                    <option value="">-- Chọn chi nhánh --</option>
+                    <option value="Quy Nhơn">Quy Nhơn</option>
+                    <option value="TP. HCM">TP. HCM</option>
+                    <option value="Hà Nội">Hà Nội</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Khung giờ phục vụ</label>
+                <div class="time-slots-wrapper">
+                    <input type="radio" id="time-0700" name="khunggiophucvu" value="07:00" required [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-0700">07:00</label>
+
+                    <input type="radio" id="time-0800" name="khunggiophucvu" value="08:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-0800">08:00</label>
+
+                    <input type="radio" id="time-0900" name="khunggiophucvu" value="09:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-0900">09:00</label>
+
+                    <input type="radio" id="time-1000" name="khunggiophucvu" value="10:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-1000">10:00</label>
+
+                    <input type="radio" id="time-1100" name="khunggiophucvu" value="11:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-1100">11:00</label>
+
+                    <input type="radio" id="time-1200" name="khunggiophucvu" value="12:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-1200">12:00</label>
+
+                    <input type="radio" id="time-1300" name="khunggiophucvu" value="13:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-1300">13:00</label>
+
+                    <input type="radio" id="time-1400" name="khunggiophucvu" value="14:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-1400">14:00</label>
+
+                    <input type="radio" id="time-1500" name="khunggiophucvu" value="15:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-1500">15:00</label>
+
+                    <input type="radio" id="time-1600" name="khunggiophucvu" value="16:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-1600">16:00</label>
+
+                    <input type="radio" id="time-1700" name="khunggiophucvu" value="17:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-1700">17:00</label>
+
+                    <input type="radio" id="time-1800" name="khunggiophucvu" value="18:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-1800">18:00</label>
+
+                    <input type="radio" id="time-1900" name="khunggiophucvu" value="19:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-1900">19:00</label>
+
+                    <input type="radio" id="time-2000" name="khunggiophucvu" value="20:00" [(ngModel)]="formData.khunggiophucvu">
+                    <label for="time-2000">20:00</label>
+                </div>
+            </div>
+            <div>
+                <label>Kỹ thuật viên</label>
+                <select name="kythuatvien" [(ngModel)]="formData.kythuatvien">
+                    <option value="">-- Chọn kỹ thuật viên --</option>
+                    <option value="Nguyen Van Thai - Nhan vien tu van">Nguyễn Văn Thái - Vị trí: Nhân viên tư vấn</option>
+                    <option value="Pham Tran An - Chuyen vien tri lieu">Phạm Trần An - Vị trí: Chuyên viên trị liệu</option>
+                    <option value="Le Duc Huy - Quan ly spa">Lê Đức Huy - Vị trí: Quản lý spa</option>
+                    <option value="Pham Thu Huong - Ky thuat vien cao cap">Phạm Thu Hương - Vị trí: Kỹ thuật viên cao cấp</option>
+                    <option value="Le Hong Van - Nhan vien le tan">Lê Hồng Vân - Vị trí: Nhân viên lễ tân</option>
+                </select>
+            </div>
+            <div>
+                <label>Dịch vụ</label>
+                <select name="dichvu_id" [(ngModel)]="formData.dichvu_id">
+                    <option value="">-- Chọn dịch vụ --</option>
+                    <option value="1">Massage Thư Giãn</option>
+                    <option value="2">Chăm Sóc Da Mặt</option>
+                    <option value="3">Trị Liệu Toàn Thân</option>
+                </select>
+            </div>
+            <div>
+                <label>Thời gian đặt lịch</label>
+                <input type="datetime-local" name="thoigiandatlich" [(ngModel)]="formData.thoigiandatlich" />
+            </div>
+            <div class="full-width">
+                <label>Ghi chú</label>
+                <textarea name="ghichu" [(ngModel)]="formData.ghichu"></textarea>
+            </div>
+        </div>
+        <div class="form-button-wrapper">
+        <button (click)="submitBooking()">Đặt lịch</button>
+
+        </div>
+    </form>
+</body>
+<app-floating-social-components></app-floating-social-components>
+<app-footer-components></app-footer-components>

@@ -1,0 +1,215 @@
+/* Đăng ký lịch */
+.booking-container {
+  display       : flex;
+  max-width     : 1200px;
+  margin-left   : auto;
+  margin-right  : auto;
+  margin-top    : 30px;
+  gap           : 40px;
+  padding-left  : 20px;
+  padding-right : 20px;
+  padding-bottom: 20px;
+  font-family   : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+}
+
+.booking-image {
+  flex: 1;
+}
+
+.booking-image img {
+  width        : 100%;
+  height       : 600px;
+  border-radius: 12px;
+  object-fit   : cover;
+}
+
+.booking-form {
+  flex: 1;
+}
+
+.booking-form h2 {
+  text-align   : center;
+  margin-bottom: 30px;
+  font-size    : 24px;
+  font-weight  : bold;
+}
+
+.booking-form form {
+  display       : flex;
+  flex-direction: column;
+  gap           : 30px;
+  /* khoảng cách giữa các nhóm form */
+  margin-left   : 50px;
+}
+
+.form-row {
+  display  : flex;
+  flex-wrap: wrap;
+  gap      : 45px;
+}
+
+.form-group {
+  flex          : 1;
+  display       : flex;
+  flex-direction: column;
+  min-width     : 200px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-size    : 14px;
+  color        : #333;
+}
+
+.form-group input,
+.form-group select {
+  padding         : 10px;
+  font-size       : 14px;
+  width           : 100%;
+  border          : 1px solid #ccc;
+  border-radius   : 6px;
+  outline         : none;
+  background-color: #fff;
+  transition      : border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #e67e22;
+}
+
+.booking-form button {
+  padding         : 12px;
+  background-color: #f1c40f;
+  color           : white;
+  border          : none;
+  font-size       : 16px;
+  border-radius   : 6px;
+  cursor          : pointer;
+  width           : 180px;
+  transition      : all 0.3s ease;
+  align-self      : center;
+}
+
+.booking-form button:hover {
+  background-color: #d35400;
+  transform       : translateY(-3px);
+}
+
+.form-button-wrapper {
+  display        : flex;
+  justify-content: center;
+  margin-top     : 10px;
+}
+
+/* Animations */
+.scroll-fade-in {
+  opacity   : 0;
+  transform : translateY(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade-in.show {
+  opacity  : 1;
+  transform: translateY(0);
+}
+
+.intro-section h2,
+.intro-section h1,
+.intro-section h4 {
+  opacity   : 0;
+  transform : translateY(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.booking-image {
+  position       : relative;
+  flex           : 1;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+}
+
+.booking-image .background-layer {
+  position        : absolute;
+  top             : 20px;
+  /* dịch nền xuống để tạo hiệu ứng nổi */
+  left            : 20px;
+  width           : 100%;
+  height          : 100%;
+  background-color: #004d40;
+  /* màu nền tùy ý */
+  border-radius   : 12px;
+  z-index         : 0;
+}
+
+.booking-image img {
+  width        : 100%;
+  height       : 600px;
+  border-radius: 12px;
+  object-fit   : cover;
+  position     : relative;
+  z-index      : 1;
+  /* ảnh nằm trên lớp nền */
+}
+
+.intro-section.show h2 {
+  transition-delay: 0s;
+  opacity         : 1;
+  transform       : translateY(0);
+}
+
+.intro-section.show h1 {
+  transition-delay: 0.2s;
+  opacity         : 1;
+  transform       : translateY(0);
+}
+
+.intro-section.show h4:nth-of-type(1) {
+  transition-delay: 0.4s;
+  opacity         : 1;
+  transform       : translateY(0);
+}
+
+.intro-section.show h4:nth-of-type(2) {
+  transition-delay: 0.6s;
+  opacity         : 1;
+  transform       : translateY(0);
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    flex-direction: column;
+    gap           : 20px;
+    padding-left  : 10px;
+    padding-right : 10px;
+  }
+
+  .booking-image img {
+    height    : auto;
+    max-height: 300px;
+  }
+
+  .booking-image .background-layer {
+    display: none;
+    /* ẩn lớp nền trên mobile để đơn giản hóa */
+  }
+
+  .booking-form form {
+    margin-left: 0;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap           : 20px;
+  }
+
+  .booking-form h2 {
+    font-size    : 20px;
+    margin-bottom: 20px;
+  }
+
+  .booking-form button {
+    width: 100%;
+  }
+}

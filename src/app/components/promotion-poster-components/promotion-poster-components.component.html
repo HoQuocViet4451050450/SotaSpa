@@ -1,0 +1,92 @@
+<app-headerbest-khuyenmai-components></app-headerbest-khuyenmai-components>
+<app-floating-social-components></app-floating-social-components>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khuyến Mãi Hấp Dẫn tại Sota – Spa & Beauty | Ưu Đãi Đặc Biệt</title>
+
+  <meta name="description" content="Khám phá các chương trình khuyến mại hấp dẫn: giảm giá liệu trình, tặng kèm dịch vụ cao cấp và combo chăm sóc sắc đẹp chỉ có tại Sota – Spa & Beauty. Đừng bỏ lỡ cơ hội làm đẹp tiết kiệm!">
+  <meta name="keywords" content="khuyến mãi spa, ưu đãi spa, giảm giá spa, combo spa, chăm sóc sắc đẹp, Sota Spa, làm đẹp tiết kiệm, chương trình khuyến mại">
+  <meta name="author" content="Sota Spa">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="http://localhost:4200/khuyen-mai" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:4200/khuyen-mai">
+  <meta property="og:title" content="Khuyến Mãi Hấp Dẫn tại Sota – Spa & Beauty | Ưu Đãi Đặc Biệt">
+  <meta property="og:description" content="Khám phá các chương trình khuyến mại hấp dẫn: giảm giá liệu trình, tặng kèm dịch vụ cao cấp và combo chăm sóc sắc đẹp chỉ có tại Sota – Spa & Beauty. Đừng bỏ lỡ cơ hội làm đẹp tiết kiệm!">
+  <meta property="og:image" content="https://yourdomain.com/assets/images/sota-spa-promotion-og-image.jpg">
+  <meta property="og:site_name" content="Sota – Spa & Beauty">
+  <meta property="og:locale" content="vi_VN">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="http://localhost:4200/khuyen-mai">
+  <meta name="twitter:title" content="Khuyến Mãi Hấp Dẫn tại Sota – Spa & Beauty | Ưu Đãi Đặc Biệt">
+  <meta name="twitter:description" content="Khám phá các chương trình khuyến mại hấp dẫn: giảm giá liệu trình, tặng kèm dịch vụ cao cấp và combo chăm sóc sắc đẹp chỉ có tại Sota – Spa & Beauty. Đừng bỏ lỡ cơ hội làm đẹp tiết kiệm!">
+  <meta name="twitter:image" content="https://yourdomain.com/assets/images/sota-spa-promotion-twitter-image.jpg">
+
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<section class="intro-banner">
+  <h2>Ưu đãi đặc biệt chỉ có tại</h2>
+  <h1>Sota – Spa & Beauty</h1>
+  <h4>
+    Khám phá các chương trình khuyến mại hấp dẫn: giảm giá liệu trình, tặng kèm dịch vụ cao cấp và combo chăm sóc sắc đẹp – chỉ có trong thời gian giới hạn. Đừng bỏ lỡ cơ hội làm đẹp tiết kiệm cùng Sota!
+  </h4>
+
+</section>
+
+
+<div class="promotion-container">
+  <div class="promotion-grid">
+    <div
+      class="promotion-card"
+      *ngFor="let promotion of paginatedPromotionList"
+      (click)="goToPromotionDetail(promotion.id)"
+      style="cursor: pointer;"
+    >
+      <img
+        *ngIf="promotion.hinhanh"
+        [src]="promotion.hinhanh"
+        alt="Hình ảnh khuyến mãi"
+        class="promotion-image"
+      />
+
+      <div class="promotion-content-wrapper">
+        <h2 class="promotion-title">{{ promotion.tieude }}</h2>
+        <div class="promotion-meta">
+          Bắt đầu: {{ promotion.ngaybatdau | date: 'dd-MM-yyyy' }} &nbsp; Hết hạn: {{ promotion.ngayhethan | date: 'dd-MM-yyyy' }} &nbsp; 👁
+          {{ promotion.luotxem }} &nbsp;
+          <button
+            style="border: none"
+            (click)="likePromotion(promotion.id); $event.stopPropagation()"
+            class="like-button"
+          >
+            ❤️ {{ promotion.luotthich }}
+          </button>
+        </div>
+        <p class="promotion-subtitle">{{ promotion.tieudephu }}</p>
+        <div class="promotion-content" [innerHTML]="promotion.noidung"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">
+      ⬅ Trang trước
+    </button>
+
+    <span>
+      Trang <strong>{{ currentPage }}</strong> / {{ totalPages }}
+    </span>
+
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      Trang sau ➡
+    </button>
+  </div>
+</div>
+
+<app-promotion-components></app-promotion-components>
+<app-footer-components></app-footer-components>

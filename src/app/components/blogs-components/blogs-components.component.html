@@ -1,0 +1,22 @@
+<section>
+  <div class="card-container" >
+    <div
+      class="card" (click)="goToBlogDetail(blog.id)"
+      *ngFor="let blog of blogList.slice().reverse().slice(0, 3)"
+      [style.backgroundImage]="'url(' + blog.hinhanh + ')'"
+    >
+      <div class="card-content">
+        <div class="author">{{ blog.nguoidang }} • {{ blog.ngaydang }}</div>
+        <div class="title">{{ blog.tieude }}</div>
+        <div class="footer">
+          <div class="icons">
+            <span>👁 {{ blog.luotxem }}</span>
+          </div>
+          <span style="cursor: pointer" (click)="likeBlog(blog.id)">
+            ❤️ {{ blog.luotthich }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

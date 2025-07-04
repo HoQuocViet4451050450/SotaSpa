@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sota – Spa & Beauty | Thư giãn và Làm đẹp</title>
+
+  <meta name="description"
+    content="Sota – Spa & Beauty: Nơi thư giãn, chăm sóc sắc đẹp và tái tạo năng lượng với các liệu trình cao cấp, thiết kế riêng biệt.">
+  <meta name="keywords" content="Spa, Làm đẹp, Thư giãn, Sota Spa, Massage, Chăm sóc da, Trị liệu, Beauty Salon">
+  <meta name="author" content="Sota Spa">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Sota – Spa & Beauty">
+  <meta property="og:description" content="Thư giãn & làm đẹp với các liệu trình chuyên biệt tại Sota Spa.">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-image.jpg">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+  <app-headerbest-components></app-headerbest-components>
+  <app-floating-social-components></app-floating-social-components>
+  <main>
+    <section class="intro-section scroll-fade-in">
+      <h2>Không gian cho riêng bạn</h2>
+      <h1>Sota – Spa & Beauty</h1>
+      <h4>
+        Khi nhịp sống hối hả khiến bạn lãng quên bản thân, hãy dành một khoảnh khắc để quay về với chính mình.
+      </h4>
+      <h4>
+        Sota là nơi bạn có thể thư giãn, thả lỏng tâm trí và để vẻ đẹp tự nhiên được chăm chút một cách tinh tế.
+      </h4>
+    </section>
+    <div class="spa-sectionold">
+      <app-spa-counter-components></app-spa-counter-components>
+    </div>
+    <div class="spa-section">
+      <app-info-components></app-info-components>
+    </div>
+    <div class="spa-section">
+      <app-service-components></app-service-components>
+    </div>
+        <div class="spa-section">
+     <app-cer-components></app-cer-components>
+    </div>
+    <div class="spa-section">
+      <app-horizontal-menu-components></app-horizontal-menu-components>
+    </div>
+    <div class="spa-section">
+      <app-booking-components></app-booking-components>
+    </div>
+    <div class="spa-sectionold2">
+      <app-blogs-components></app-blogs-components>
+    </div>
+
+    <section class="testimonial-section scroll-fade-in spa-section">
+      <div class="testimonial-header">
+        <p class="label">KHÁCH HÀNG NÓI GÌ?</p>
+        <h2>Khách hàng đánh giá về <span class="highlight">dịch vụ Spa Sota</span> như thế nào?</h2>
+      </div>
+
+      <div class="testimonial-carousel-container">
+        <div class="testimonial-carousel" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+          <div class="testimonial-card" *ngFor="let item of feedbackList">
+            <h3 class="testimonial-title">{{ item.title }}</h3>
+            <p class="testimonial-content">“{{ item.content }}”</p>
+            <div class="testimonial-author">
+              <img [src]="item.avatar" alt="{{ item.name }}" class="avatar" />
+              <div>
+                <p class="name">{{ item.name }}</p>
+                <p class="position">{{ item.position }}</p>
+              </div>
+            </div>
+            <div class="stars">Đánh giá: ⭐️⭐️⭐️⭐️⭐️</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-nav">
+        <button (click)="prev()">‹</button>
+        <button (click)="next()">›</button>
+      </div>
+    </section>
+  </main>
+
+  <app-footer-components></app-footer-components>
+</body>
+
+</html>

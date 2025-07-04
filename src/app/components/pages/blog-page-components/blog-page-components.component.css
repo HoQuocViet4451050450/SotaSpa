@@ -1,0 +1,274 @@
+.blog-container {
+  padding    : 20px;
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+}
+
+.blog-grid {
+  display              : grid;
+  /* Thay đổi dòng này */
+  grid-template-columns: repeat(3, 1fr);
+  gap                  : 20px;
+}
+
+
+.blog-card {
+  border    : 1px solid #ccc;
+  padding   : 0;
+  /* Loại bỏ padding ở đây */
+  background: #fff;
+  transition: transform 0.3s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /* Giữ lại box-shadow nếu muốn */
+}
+
+
+.blog-card:hover {
+  transform : translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  /* Tăng shadow khi hover nếu muốn */
+}
+
+.blog-image {
+  width           : 100%;
+  height          : 200px;
+  /* hoặc 180px nếu muốn thấp hơn */
+  object-fit      : cover;
+  background-color: #eee;
+  /* phòng khi thiếu ảnh */
+  /* Không cần thay đổi gì ở đây nếu bạn muốn ảnh chiếm 100% width của card */
+}
+
+/* Tạo một div bọc nội dung văn bản và thêm padding cho nó */
+.blog-content-wrapper {
+  padding: 16px;
+  /* Padding cho tất cả nội dung ngoại trừ ảnh */
+}
+
+.blog-subtitle {
+  margin-bottom: 10px;
+  /* Đảm bảo có khoảng cách nếu .blog-content không có margin-top */
+}
+
+.blog-title {
+  font-size  : 18px;
+  font-weight: bold;
+  color      : #004d40;
+  margin-top : 10px;
+}
+
+.blog-meta {
+  font-size    : 14px;
+  color        : #666;
+  margin-bottom: 10px;
+}
+
+.pagination {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.pagination button {
+  padding         : 8px 16px;
+  margin          : 0 6px;
+  border          : none;
+  background-color: #004d40;
+  color           : white;
+  border-radius   : 6px;
+  cursor          : pointer;
+  font-size       : 14px;
+  transition      : background-color 0.3s ease, transform 0.2s ease;
+  box-shadow      : 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.pagination button:hover {
+  background-color: #00695c;
+  /* màu sáng hơn 004d40 một chút khi hover */
+  transform       : translateY(-2px);
+}
+
+.pagination button:disabled {
+  background-color: #a7a7a7;
+  color           : #eeeeee;
+  cursor          : not-allowed;
+  box-shadow      : none;
+}
+
+.pagination button.active {
+  background-color: #26a69a;
+  /* màu nổi bật hơn để đánh dấu nút trang hiện tại */
+  color           : white;
+}
+
+
+.intro-section {
+  text-align         : center;
+  display            : flex;
+  flex-direction     : column;
+  align-items        : center;
+  justify-content    : center;
+  padding            : 20px 20px;
+  margin             : 0 auto;
+  background-image   : url('https://i.pinimg.com/736x/4a/15/83/4a1583c6086f3b52bf52cc5c224ffd76.jpg');
+  /* Đường dẫn ảnh nền */
+  background-size    : cover;
+  /* Giúp ảnh phủ kín toàn bộ vùng */
+  background-position: center;
+  /* Canh giữa ảnh */
+  background-repeat  : no-repeat;
+  /* Không lặp lại ảnh */
+}
+
+/* h2: câu chào nhẹ */
+.intro-section h2 {
+  font-weight  : normal;
+  font-size    : 25px;
+  font-family  : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  margin-top   : 8px;
+  margin-bottom: 8px;
+}
+
+/* PHẦN GIỚI THIỆU (CÓ BACKGROUND ẢNH) */
+.intro-banner {
+  position     : relative;
+  text-align   : center;
+  padding      : 40px 20px;
+  margin-top   : 30px;
+  margin-bottom: 20px;
+
+  color      : white;
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  background : url('https://i.pinimg.com/736x/a5/b1/2e/a5b12ebca9f10b96c0290a76e1e8883e.jpg') center/cover no-repeat;
+  overflow   : hidden;
+}
+
+.intro-banner::before {
+  content         : "";
+  position        : absolute;
+  inset           : 0;
+  background-color: rgba(26, 25, 25, 0.8);
+  z-index         : 1;
+}
+
+.intro-banner h1,
+.intro-banner h2,
+.intro-banner h4,
+.intro-banner h5 {
+  position   : relative;
+  z-index    : 2;
+  margin     : 8px 0;
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+}
+
+.intro-banner h2 {
+  font-weight: normal;
+  font-size  : 25px;
+}
+
+.intro-banner h1 {
+  font-weight: bold;
+  font-size  : 40px;
+  color      : #b28d5f;
+}
+
+.intro-banner h4 {
+  font-weight: normal;
+  font-size  : 20px;
+  margin     : 0;
+}
+
+.breadcrumb .white {
+  color: #fff;
+}
+
+.breadcrumb .yellow {
+  color: #f1c40f;
+}
+
+/* h1: tiêu đề chính nổi bật */
+.intro-section h1 {
+  font-weight  : bold;
+  font-size    : 40px;
+  color        : #b28d5f;
+  font-family  : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  margin-top   : 8px;
+  margin-bottom: 8px;
+}
+
+/* h4: đoạn mô tả */
+.intro-section h4 {
+  font-weight  : normal;
+  font-size    : 20px;
+  font-family  : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  margin-top   : 0px;
+  margin-bottom: 0px;
+  color        : white;
+}
+
+.scroll-fade-in {
+  opacity   : 0;
+  transform : translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade-in.active {
+  opacity  : 1;
+  transform: translateY(0);
+}
+
+/* Thêm media query cho màn hình trung bình */
+@media (max-width: 992px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 cột trên màn hình tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-container {
+    padding: 10px;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+    /* 1 cột trên màn hình điện thoại */
+    gap                  : 15px;
+  }
+
+  .blog-card {
+    padding: 12px;
+  }
+
+  .blog-image {
+    height: 160px;
+    /* giảm chiều cao ảnh cho màn nhỏ */
+  }
+
+  .blog-title {
+    font-size: 16px;
+  }
+
+  .blog-meta {
+    font-size: 13px;
+  }
+
+  .pagination button {
+    padding  : 5px 10px;
+    font-size: 14px;
+  }
+
+  .intro-section {
+    padding: 15px 10px;
+  }
+
+  .intro-section h2 {
+    font-size: 20px;
+  }
+
+  .intro-section h1 {
+    font-size: 28px;
+  }
+
+  .intro-section h4 {
+    font-size: 16px;
+  }
+}

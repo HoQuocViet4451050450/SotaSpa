@@ -1,0 +1,423 @@
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<section class="contact-info">
+  <div class="contact-row">
+    <span class="contact-info-span">
+      Hotline: 0796 781 024 | Email: hqv&#64;hungvietphat.io.vn |
+      <a style="color: #f1c40f;" href="/">Truy cập ngay trang khách hàng</a>
+    </span>
+  </div>
+</section>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="admin-header">
+      <h1>Quản trị Sota Spa & Beauty</h1>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="admin-nav">
+      <button (click)="activeSection = 'baiviet'">Bài viết</button>
+      <button (click)="activeSection = 'promotion'">Khuyến mãi</button>
+      <button (click)="activeSection = 'advisory'">Tư vấn</button>
+      <button (click)="activeSection = 'booking'">Đặt lịch</button>
+    </nav>
+
+    <!-- Quản lý Bài viết -->
+    <section class="fade-in" *ngIf="activeSection === 'baiviet'">
+      <!-- Quản lý Bài viết -->
+      <section class="fade-in">
+        <h2>Quản lý Bài viết</h2>
+
+        <form (ngSubmit)="onSubmit()" #blogForm="ngForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <input type="hidden" [(ngModel)]="formData.id" name="id">
+              <label>Người đăng:</label>
+              <input type="text" [(ngModel)]="formData.nguoidang" name="nguoidang" required>
+            </div>
+
+            <div class="form-group">
+              <label>Tiêu đề:</label>
+              <input type="text" [(ngModel)]="formData.tieude" name="tieude" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Tiêu đề phụ:</label>
+            <input type="text" [(ngModel)]="formData.tieudephu" name="tieudephu">
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Lượt xem:</label>
+              <input type="number" [(ngModel)]="formData.luotxem" name="luotxem">
+            </div>
+
+            <div class="form-group">
+              <label>Lượt thích:</label>
+              <input type="number" [(ngModel)]="formData.luotthich" name="luotthich">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Nội dung:</label>
+            <textarea [(ngModel)]="formData.noidung" name="noidung" placeholder="Nhập nội dung bài viết..."></textarea>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Hình ảnh (URL):</label>
+              <input type="text" [(ngModel)]="formData.hinhanh" name="hinhanh"
+                placeholder="https://example.com/image.jpg">
+            </div>
+
+            <div class="form-group">
+              <label>Đường link:</label>
+              <input type="text" [(ngModel)]="formData.duonglink" name="duonglink" placeholder="https://example.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Liên hệ (Email):</label>
+            <input type="email" [(ngModel)]="formData.lienhe" name="lienhe" placeholder="email@example.com">
+          </div>
+
+          <button type="submit" class="btn-success">{{ formData.id ? 'Cập nhật' : 'Thêm mới' }}</button>
+          <button type="button" class="btn-success" (click)="resetForm()">Hủy</button>
+        </form>
+
+        <!-- Search and Filter -->
+        <div class="search-filter">
+          <input type="text" placeholder="Tìm kiếm bài viết...">
+          <button type="button">Tìm kiếm</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Người đăng</th>
+              <th>Tiêu đề</th>
+              <th>Tiêu đề phụ</th>
+              <th>Ngày đăng</th>
+              <th>Lượt xem</th>
+              <th>Lượt thích</th>
+              <th>Nội dung</th>
+              <th>Hình ảnh</th>
+              <th>Đường link</th>
+              <th>Liên hệ</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let blog of blogList">
+              <td>{{ blog.nguoidang }}</td>
+              <td>{{ blog.tieude }}</td>
+              <td>{{ blog.tieudephu }}</td>
+              <td>{{ blog.ngaydang | date:'yyyy-MM-dd' }}</td>
+              <td>{{ blog.luotxem }}</td>
+              <td>{{ blog.luotthich }}</td>
+              <td>
+                <div class="noidung-box">{{ blog.noidung }}</div>
+              </td>
+              <td><img [src]="blog.hinhanh" alt="Hình ảnh" width="100" *ngIf="blog.hinhanh"></td>
+              <td><a [href]="blog.duonglink" target="_blank">{{ blog.duonglink }}</a></td>
+              <td>{{ blog.lienhe }}</td>
+              <td>
+                <button class="btn-edit" (click)="editBlog(blog)">Sửa</button>
+                <button class="btn-delete" (click)="deleteBlog(blog.id)">Xóa</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </section>
+    <!-- Advisory Section -->
+    <div *ngIf="activeSection === 'advisory'">
+      <h3>DANH SÁCH TƯ VẤN</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Tên KH</th>
+            <th>Điện thoại</th>
+            <th>Email</th>
+            <th>Dịch vụ</th>
+            <th>Chi nhánh</th>
+            <th>Thời gian</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of advisoryList; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.tenkhachhang }}</td>
+            <td>{{ item.sodienthoai }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.tendichvu }}</td>
+            <td>{{ item.chinhanh }}</td>
+            <td>{{ item.thoigian}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Booking Section -->
+    <div *ngIf="activeSection === 'booking'">
+      <h3>LỊCH ĐẶT</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Họ tên</th>
+            <th>SĐT</th>
+            <th>Email</th>
+            <th>Thời gian đặt</th>
+            <th>Ghi chú</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let b of bookingList; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ b.hovaten }}</td>
+            <td>{{ b.sodienthoai }}</td>
+            <td>{{ b.email }}</td>
+            <td>{{ b.thoigiandatlich | date: 'short' }}</td>
+            <td>{{ b.ghichu }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Quản lý Dịch vụ -->
+    <section class="fade-in" *ngIf="activeSection === 'dichvu'">
+      <!-- Quản lý Dịch vụ -->
+      <section class="fade-in">
+        <h2>Quản lý Dịch vụ</h2>
+        <!-- FORM THÊM DỊCH VỤ MỚI -->
+        <h3>Thêm Dịch Vụ Mới</h3>
+        <form (ngSubmit)="addDichVu()" #dichVuForm="ngForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="tendichvu">Tên dịch vụ:</label>
+              <input type="text" id="tendichvu" [(ngModel)]="newDichVu.tendichvu" name="tendichvu" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="mota">Mô tả:</label>
+            <textarea id="mota" [(ngModel)]="newDichVu.mota" name="mota"
+              placeholder="Mô tả chi tiết về dịch vụ..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-success">Thêm Dịch Vụ</button>
+        </form>
+
+        <!-- DANH SÁCH DỊCH VỤ -->
+        <h3>Danh Sách Dịch Vụ</h3>
+        <div *ngFor="let dv of dichvus" class="service-item">
+          <!-- Nếu đang chỉnh sửa -->
+          <div *ngIf="editingDichVu?.id === dv.id; else viewDichVu">
+            <div class="form-grid">
+              <div class="form-group">
+                <input type="text" [(ngModel)]="editingDichVu.tendichvu" placeholder="Tên dịch vụ" name="tendichvu" />
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea [(ngModel)]="editingDichVu.mota" placeholder="Mô tả" name="mota"></textarea>
+            </div>
+            <button class="btn-success" (click)="updateDichVu(editingDichVu)">Lưu</button>
+            <button type="button" class="btn-success" (click)="editingDichVu = null">Hủy</button>
+          </div>
+
+          <!-- Hiển thị dịch vụ -->
+          <ng-template #viewDichVu>
+            <h4>{{ dv.tendichvu }}</h4>
+            <p>{{ dv.mota }}</p>
+            <button class="btn-edit" (click)="startEditDichVu(dv)">Sửa</button>
+            <button class="btn-delete" (click)="deleteDichVu(dv.id)">Xóa</button>
+          </ng-template>
+
+          <!-- DANH SÁCH GÓI CỦA DỊCH VỤ -->
+          <div class="package-list">
+            <h5>Các Gói Dịch Vụ</h5>
+            <ul>
+              <li *ngFor="let g of dv.gois">
+                <!-- Nếu đang chỉnh sửa gói -->
+                <div *ngIf="editingGoi?.id === g.id; else viewGoi">
+                  <div class="form-grid">
+                    <input [(ngModel)]="editingGoi.tengoi" placeholder="Tên gói" name="tengoi" />
+                    <input type="number" [(ngModel)]="editingGoi.solan" placeholder="Số lần" name="solan" />
+                    <input type="number" [(ngModel)]="editingGoi.gia" placeholder="Giá" name="gia" />
+                  </div>
+                  <button class="btn-success" (click)="updateGoi(editingGoi)">Lưu</button>
+                  <button type="button" (click)="editingGoi = null">Hủy</button>
+                </div>
+
+                <!-- Hiển thị gói -->
+                <ng-template #viewGoi>
+                  <span>{{ g.tengoi }} - {{ g.solan }} lần - {{ g.gia | currency:'VND':'symbol' }}</span>
+                  <div>
+                    <button class="btn-edit" (click)="startEditGoi(g)">Sửa</button>
+                    <button class="btn-delete" (click)="deleteGoi(g.id)">Xóa</button>
+                  </div>
+                </ng-template>
+              </li>
+            </ul>
+
+            <!-- FORM THÊM GÓI MỚI CHO DỊCH VỤ -->
+            <h6>Thêm Gói Dịch Vụ</h6>
+            <form (ngSubmit)="addGoiDichVuFor(dv.id)">
+              <div class="form-grid">
+                <div class="form-group">
+                  <input type="text" [(ngModel)]="newGoi.tengoi" name="tengoi-{{dv.id}}" placeholder="Tên gói"
+                    required />
+                </div>
+                <div class="form-group">
+                  <input type="number" [(ngModel)]="newGoi.solan" name="solan-{{dv.id}}" placeholder="Số lần"
+                    required />
+                </div>
+                <div class="form-group">
+                  <input type="number" [(ngModel)]="newGoi.gia" name="gia-{{dv.id}}" placeholder="Giá" required />
+                </div>
+              </div>
+              <button type="submit" class="btn-success">Thêm Gói</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </section>
+    <!-- Quản lý Khuyến mãi -->
+    <section class="fade-in" *ngIf="activeSection === 'promotion'">
+      <!-- Quản lý Bài khuyến mãi -->
+      <section class="fade-in">
+        <h2>Quản lý Khuyến mãi</h2>
+        <form (ngSubmit)="submitPromotion()" #promotionFormRef="ngForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <input type="hidden" [(ngModel)]="promotionForm.id" name="id">
+              <label>Người đăng:</label>
+              <input type="text" [(ngModel)]="promotionForm.nguoidang" name="nguoidang" required>
+            </div>
+
+            <div class="form-group">
+              <label>Tiêu đề:</label>
+              <input type="text" [(ngModel)]="promotionForm.tieude" name="tieude" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Tiêu đề phụ:</label>
+            <input type="text" [(ngModel)]="promotionForm.tieudephu" name="tieudephu">
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Ngày bắt đầu:</label>
+              <input type="date" [(ngModel)]="promotionForm.ngaybatdau" name="ngaybatdau">
+            </div>
+
+            <div class="form-group">
+              <label>Ngày hết hạn:</label>
+              <input type="date" [(ngModel)]="promotionForm.ngayhethan" name="ngayhethan">
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Lượt xem:</label>
+              <input type="number" [(ngModel)]="promotionForm.luotxem" name="luotxem">
+            </div>
+
+            <div class="form-group">
+              <label>Lượt thích:</label>
+              <input type="number" [(ngModel)]="promotionForm.luotthich" name="luotthich">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Nội dung:</label>
+            <textarea [(ngModel)]="promotionForm.noidung" name="noidung"
+              placeholder="Nhập nội dung khuyến mãi..."></textarea>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Hình ảnh (URL):</label>
+              <input type="text" [(ngModel)]="promotionForm.hinhanh" name="hinhanh"
+                placeholder="https://example.com/image.jpg">
+            </div>
+
+            <div class="form-group">
+              <label>Đường link:</label>
+              <input type="text" [(ngModel)]="promotionForm.duonglink" name="duonglink"
+                placeholder="https://example.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Liên hệ (Email):</label>
+            <input type="email" [(ngModel)]="promotionForm.lienhe" name="lienhe" placeholder="email@example.com">
+          </div>
+
+          <button type="submit" class="btn-success">{{ promotionForm.id ? 'Cập nhật' : 'Thêm mới' }}</button>
+          <button type="button" class="btn-success" (click)="resetPromotionForm()">Hủy</button>
+        </form>
+
+        <!-- Search and Filter (optional logic) -->
+        <div class="search-filter">
+          <input type="text" placeholder="Tìm kiếm bài viết...">
+          <button type="button">Tìm kiếm</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Người đăng</th>
+              <th>Tiêu đề</th>
+              <th>Tiêu đề phụ</th>
+              <th>Ngày đăng</th>
+              <th>Ngày bắt đầu</th>
+              <th>Ngày hết hạn</th>
+              <th>Lượt xem</th>
+              <th>Lượt thích</th>
+              <th>Nội dung</th>
+              <th>Hình ảnh</th>
+              <th>Đường link</th>
+              <th>Liên hệ</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let promotion of promotionList">
+              <td>{{ promotion.nguoidang }}</td>
+              <td>{{ promotion.tieude }}</td>
+              <td>{{ promotion.tieudephu }}</td>
+              <td>{{ promotion.ngaydang | date:'yyyy-MM-dd' }}</td>
+              <td>{{ promotion.ngaybatdau | date:'yyyy-MM-dd' }}</td>
+              <td>{{ promotion.ngayhethan | date:'yyyy-MM-dd' }}</td>
+              <td>{{ promotion.luotxem }}</td>
+              <td>{{ promotion.luotthich }}</td>
+              <td>
+                <div class="noidung-box">{{ promotion.noidung }}</div>
+              </td>
+              <td><img [src]="promotion.hinhanh" alt="Hình ảnh" width="100" *ngIf="promotion.hinhanh"></td>
+              <td><a [href]="promotion.duonglink" target="_blank">{{ promotion.duonglink }}</a></td>
+              <td>{{ promotion.lienhe }}</td>
+              <td>
+                <button class="btn-edit" (click)="editPromotion(promotion)">Sửa</button>
+                <button class="btn-delete" (click)="deletePromotion(promotion.id)">Xóa</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+      <p>&copy; 2024 Atona Spa & Beauty - Hệ thống quản trị</p>
+    </footer>
+  </div>
+</body>
+<app-footer-components></app-footer-components>

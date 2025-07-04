@@ -1,0 +1,238 @@
+.blog-detail-container {
+  max-width       : 900px;
+  margin          : 30px auto;
+  padding         : 0 20px;
+  font-family     : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  color           : #333;
+  background-color: #fff;
+}
+
+.blog-title {
+  font-size    : 2.5rem;
+  font-weight  : 700;
+  margin-bottom: 10px;
+  color        : #222;
+}
+
+.blog-meta {
+  font-size      : 0.95rem;
+  color          : #777;
+  margin-bottom  : 20px;
+  display        : flex;
+  justify-content: space-between;
+  flex-wrap      : wrap;
+  gap            : 10px;
+}
+
+.blog-detail-image {
+  width        : 100%;
+  max-height   : 450px;
+  object-fit   : cover;
+  border-radius: 12px;
+  margin       : 30px 0;
+  box-shadow   : 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blog-subtitle {
+  font-size    : 1.2rem;
+  font-style   : italic;
+  color        : #555;
+  margin-bottom: 20px;
+  padding-left : 10px;
+  border-left  : 4px solid #ccc;
+}
+
+.blog-content {
+  line-height: 1.8;
+  font-size  : 1.05rem;
+
+  h2,
+  h3 {
+    margin-top: 30px;
+    color     : #444;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  img {
+    max-width    : 100%;
+    border-radius: 8px;
+    margin       : 20px 0;
+  }
+
+  ul,
+  ol {
+    margin-left  : 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.intro-section {
+  text-align         : center;
+  display            : flex;
+  flex-direction     : column;
+  align-items        : center;
+  justify-content    : center;
+  padding            : 20px 20px;
+  margin             : 0 auto;
+  background-image   : url('https://i.pinimg.com/736x/a5/b1/2e/a5b12ebca9f10b96c0290a76e1e8883e.jpg');
+  /* Đường dẫn ảnh nền */
+  background-size    : cover;
+  /* Giúp ảnh phủ kín toàn bộ vùng */
+  background-position: center;
+  /* Canh giữa ảnh */
+  background-repeat  : no-repeat;
+  /* Không lặp lại ảnh */
+}
+
+/* PHẦN GIỚI THIỆU (CÓ BACKGROUND ẢNH) */
+.intro-banner {
+  position     : relative;
+  text-align   : center;
+  padding      : 40px 20px;
+  margin-top   : 30px;
+  margin-bottom: 20px;
+
+  color      : white;
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  background : url('https://i.pinimg.com/736x/a5/b1/2e/a5b12ebca9f10b96c0290a76e1e8883e.jpg') center/cover no-repeat;
+  overflow   : hidden;
+}
+
+.intro-banner::before {
+  content         : "";
+  position        : absolute;
+  inset           : 0;
+  background-color: rgba(26, 25, 25, 0.8);
+  z-index         : 1;
+}
+
+.intro-banner h1,
+.intro-banner h2,
+.intro-banner h4,
+.intro-banner h5 {
+  position   : relative;
+  z-index    : 2;
+  margin     : 8px 0;
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+}
+
+.intro-banner h2 {
+  font-weight: normal;
+  font-size  : 25px;
+}
+
+.intro-banner h1 {
+  font-weight: bold;
+  font-size  : 40px;
+  color      : #b28d5f;
+}
+
+.intro-banner h4 {
+  font-weight: normal;
+  font-size  : 20px;
+  margin     : 0;
+}
+
+.breadcrumb .white {
+  color: #fff;
+}
+
+.breadcrumb .yellow {
+  color: #f1c40f;
+}
+
+/* h2: câu chào nhẹ */
+.intro-section h2 {
+  font-weight  : normal;
+  font-size    : 25px;
+  font-family  : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  margin-top   : 8px;
+  margin-bottom: 8px;
+}
+
+/* h1: tiêu đề chính nổi bật */
+.intro-section h1 {
+  font-weight  : bold;
+  font-size    : 40px;
+  color        : #b28d5f;
+  font-family  : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  margin-top   : 8px;
+  margin-bottom: 8px;
+}
+
+/* h4: đoạn mô tả */
+.intro-section h4 {
+  font-weight  : normal;
+  font-size    : 20px;
+  font-family  : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  margin-top   : 0px;
+  margin-bottom: 0px;
+  color        : white;
+}
+
+@media (max-width: 768px) {
+  .blog-detail-container {
+    max-width: 100%;
+    padding  : 0 8px;
+    font-size: 0.98rem;
+  }
+
+  .blog-title {
+    font-size: 1.6rem;
+  }
+
+  .blog-detail-image {
+    max-height: 220px;
+    margin    : 16px 0;
+  }
+
+  .intro-banner {
+    padding      : 24px 8px;
+    margin-top   : 16px;
+    margin-bottom: 10px;
+  }
+
+  .intro-banner h1 {
+    font-size: 1.6rem;
+  }
+
+  .intro-banner h2 {
+    font-size: 1.1rem;
+  }
+
+  .intro-banner h4 {
+    font-size: 1rem;
+  }
+
+  .blog-content {
+    font-size  : 0.98rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-detail-container {
+    padding  : 0 2px;
+    font-size: 0.92rem;
+  }
+
+  .blog-title {
+    font-size: 1.2rem;
+  }
+
+  .blog-detail-image {
+    max-height: 140px;
+  }
+
+  .intro-banner h1 {
+    font-size: 1.1rem;
+  }
+
+  .intro-banner h2,
+  .intro-banner h4 {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,45 @@
+<section class="horizontal-section">
+  <div class="background-overlay">
+    <h2 class="main-title scroll-fade-in">Các dịch vụ nổi bật</h2>
+  </div>
+
+  <div class="paged-container scroll-fade-in">
+    <div
+      class="paged-slide"
+      *ngFor="let group of groupedDichvus; let i = index"
+      [class.active]="i === currentPage"
+    >
+      <div class="card" *ngFor="let dv of group">
+        <h3>{{ dv.tendichvu }}</h3>
+
+        <div class="description-scroll">
+          <p>{{ dv.mota }}</p>
+        </div>
+
+        <div class="goi-wrapper" *ngIf="dv.gois.length > 0; else noGoi">
+          <ul>
+            <li *ngFor="let goi of dv.gois">
+              {{ goi.solan }} lần
+              <strong>{{ goi.gia | number: '1.0-0' }}đ</strong>
+            </li>
+          </ul>
+        </div>
+
+        <ng-template #noGoi>
+          <p><em>Chưa có gói dịch vụ</em></p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nút chuyển trang -->
+  <div class="paging-buttons">
+    <button (click)="prevPage()" [disabled]="currentPage === 0">←</button>
+    <button
+      (click)="nextPage()"
+      [disabled]="currentPage === groupedDichvus.length - 1"
+    >
+      →
+    </button>
+  </div>
+</section>

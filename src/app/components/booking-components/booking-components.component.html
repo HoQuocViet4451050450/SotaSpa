@@ -1,0 +1,69 @@
+<div class="booking-container">
+  <div class="booking-image">
+      <div class="background-layer"></div> <!-- lớp nền màu -->
+
+    <img src="https://i.pinimg.com/736x/fb/60/9a/fb609acd30ce1cb3bf44ef43df562e9b.jpg" alt="Đặt lịch">
+  </div>
+  <div class="booking-form">
+    <h2>Đặt lịch tư vấn</h2>
+    <form (ngSubmit)="datLich()">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Tên khách hàng *</label>
+          <input type="text" id="name" required [(ngModel)]="form.tenkhachhang" name="name">
+        </div>
+        <div class="form-group">
+          <label for="phone">Số điện thoại *</label>
+          <input type="tel" id="phone" required [(ngModel)]="form.sodienthoai" name="phone">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" required [(ngModel)]="form.email" name="email">
+      </div>
+
+      <div class="form-group">
+        <label for="service">Dịch vụ *</label>
+        <select id="service" required [(ngModel)]="form.dichvu_id" name="service">
+          <option value="" disabled selected>Chọn dịch vụ *</option>
+          <option *ngFor="let item of danhSachDichVu" [value]="item.id">{{ item.tendichvu }}</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="branch">Chi nhánh *</label>
+          <select id="branch" required [(ngModel)]="form.chinhanh" name="branch">
+            <option value="" disabled selected>Chọn chi nhánh *</option>
+            <option value="quy-nhon">Quy Nhơn</option>
+            <option value="tphcm">TP. Hồ Chí Minh</option>
+            <option value="hanoi">Hà Nội</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="time">Thời gian liên hệ phù hợp *</label>
+          <select id="time" required [(ngModel)]="form.thoigian" name="time">
+            <option value="" disabled selected>Chọn giờ</option>
+            <option value="9h">09:00</option>
+            <option value="10h">10:00</option>
+            <option value="11h">11:00</option>
+            <option value="12h">12:00</option>
+            <option value="13h">13:00</option>
+            <option value="14h">14:00</option>
+            <option value="15h">15:00</option>
+            <option value="16h">16:00</option>
+            <option value="17h">17:00</option>
+            <option value="18h">18:00</option>
+            <option value="19h">19:00</option>
+            <option value="20h">20:00</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-button-wrapper">
+        <button type="submit">Đặt lịch ngay</button>
+      </div>
+    </form>
+  </div>
+</div>

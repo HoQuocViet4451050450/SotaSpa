@@ -1,0 +1,96 @@
+.promotion-container {
+  position     : relative;
+  width        : 100%;
+  max-width    : 5000px;
+  margin       : 0px auto;
+  border-radius: 16px;
+  overflow     : hidden;
+  box-shadow   : 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.promo-image {
+  width     : 100%;
+  height    : 250px;
+  object-fit: cover;
+  display   : block;
+}
+
+.promo-overlay {
+  position       : absolute;
+  top            : 0;
+  left           : 0;
+  width          : 100%;
+  height         : 100%;
+  background     : rgba(0, 0, 0, 0.45);
+  /* overlay tối nhẹ */
+  color          : white;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  text-align     : center;
+  padding        : 20px;
+}
+
+.promo-overlay h2 {
+  font-size    : 1.8rem;
+  line-height  : 1.5;
+  margin-bottom: 16px;
+  font-family  : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+
+}
+
+.highlight {
+  color      : #ffd700;
+  font-weight: bold;
+}
+
+.btn-voucher {
+  padding         : 12px 28px;
+  font-size       : 1rem;
+  background-color: #f1c40f;
+  color           : white;
+  border          : none;
+  border-radius   : 8px;
+  cursor          : pointer;
+  transition      : background-color 0.2s ease;
+}
+
+.btn-voucher:hover {
+  background-color: #d35400;
+}
+
+@media (max-width: 768px) {
+  .promo-image {
+    height: 180px;
+  }
+
+  .promo-overlay {
+    padding: 12px;
+  }
+
+  .promo-overlay h2 {
+    font-size  : 1.2rem;
+    line-height: 1.4;
+  }
+
+  .btn-voucher {
+    padding  : 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-image {
+    height: 150px;
+  }
+
+  .promo-overlay h2 {
+    font-size: 1rem;
+  }
+
+  .btn-voucher {
+    width    : 100%;
+    max-width: 240px;
+  }
+}

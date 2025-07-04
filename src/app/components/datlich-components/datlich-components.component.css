@@ -1,0 +1,262 @@
+/* General Body Styles */
+body {
+    font-family    : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+    margin         : 0;
+    padding        : 20px;
+    color          : #333;
+    line-height    : 1.6;
+    display        : flex;
+    flex-direction : column;
+    /* Quan trọng để header, form và footer xếp chồng lên nhau */
+    justify-content: center;
+    /* Giúp căn giữa form chính */
+    align-items    : center;
+    min-height     : 100vh;
+    box-sizing     : border-box;
+}
+
+/* Styling for the radio button time slots */
+.time-slots-wrapper {
+    display   : flex;
+    flex-wrap : wrap;
+    /* Allows slots to wrap to the next line */
+    gap       : 10px;
+    /* Space between time slot buttons */
+    margin-top: 5px;
+}
+
+.time-slots-wrapper input[type="radio"] {
+    display: none;
+    /* Hide the default radio button */
+}
+
+.time-slots-wrapper label {
+    background-color: #f0f0f0;
+    /* Light background for the button */
+    color           : #555;
+    padding         : 10px 15px;
+    border          : 1px solid #ddd;
+    border-radius   : 8px;
+    cursor          : pointer;
+    transition      : background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    font-size       : 0.9em;
+    min-width       : 70px;
+    /* Ensure buttons have a minimum width */
+    text-align      : center;
+    box-sizing      : border-box;
+    /* Important for padding/border calculation */
+}
+
+.time-slots-wrapper input[type="radio"]:checked+label {
+    background-color: darkgreen;
+    /* Main spa color when selected */
+    color           : #ffffff;
+    border-color    : darkgreen;
+    box-shadow      : 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.time-slots-wrapper label:hover {
+    background-color: #e5e5e5;
+    /* Lighter background on hover */
+    border-color    : #ccc;
+}
+
+.time-slots-wrapper input[type="radio"]:checked+label:hover {
+    background-color: darkgreen;
+    /* Darker shade when selected and hovered */
+    border-color    : darkgreen;
+}
+
+/* Ensure labels inside time-slots-wrapper don't inherit the default label margin-bottom */
+.time-slots-wrapper label {
+    margin-bottom: 0;
+}
+
+/* Adjustments for general labels if needed after adding this specific style */
+.booking-form label {
+    margin-bottom: 8px;
+    /* Keep this for general labels */
+}
+
+/* Booking Form Container */
+.booking-form {
+    background-color: #ffffff;
+    padding         : 40px;
+    max-width       : 950px;
+    /* Chiều rộng form vẫn được tăng như yêu cầu trước */
+    width           : 100%;
+    box-sizing      : border-box;
+    border          : 1px solid #e0e0e0;
+}
+
+.booking-form h2 {
+    text-align    : center;
+    color         : darkgreen;
+    /* Spa-like, muted pink/purple */
+    margin-bottom : 30px;
+    font-size     : 2.2em;
+    font-weight   : 600;
+    letter-spacing: 0.5px;
+}
+
+/* Grid Layout for Form Fields */
+.booking-grid {
+    display              : grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Responsive columns */
+    gap                  : 25px;
+    /* Spacing between fields */
+    margin-bottom        : 30px;
+}
+
+.booking-grid>div {
+    /* Each field container */
+    display       : flex;
+    flex-direction: column;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+    /* Makes this div span across all columns */
+}
+
+/* Nút Đặt lịch */
+.form-button-wrapper button {
+    background-color: darkgreen;
+    /* Hồng pastel nhẹ */
+    color           : white;
+    border          : none;
+    padding         : 12px 28px;
+    font-size       : 16px;
+    font-weight     : 500;
+    border-radius   : 8px;
+    cursor          : pointer;
+    transition      : background-color 0.3s ease, transform 0.2s ease;
+    box-shadow      : 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-button-wrapper button:hover {
+    background-color: green;
+    /* Hồng đậm hơn khi hover */
+    transform       : translateY(-2px);
+}
+
+.form-button-wrapper {
+    text-align: center;
+    margin-top: 24px;
+}
+
+/* Labels */
+.booking-form label {
+    display      : block;
+    margin-bottom: 8px;
+    font-weight  : 500;
+    color        : #555;
+    font-size    : 0.95em;
+}
+
+/* Input & Select Fields */
+.booking-form input[type="text"],
+.booking-form input[type="tel"],
+.booking-form input[type="datetime-local"],
+.booking-form select,
+.booking-form textarea {
+    width           : 100%;
+    padding         : 12px 15px;
+    border          : 1px solid #d0d0d0;
+    border-radius   : 8px;
+    font-size       : 1em;
+    color           : #333;
+    background-color: #fcfcfc;
+    transition      : border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing      : border-box;
+    /* Include padding in width calculation */
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    border-color: #a48496;
+    /* Lighter spa pink/purple on focus */
+    box-shadow  : 0 0 0 3px rgba(172, 137, 155, 0.2);
+    /* Soft glow */
+    outline     : none;
+}
+
+.booking-form textarea {
+    resize    : vertical;
+    /* Allow vertical resizing */
+    min-height: 100px;
+    /* Minimum height for textarea */
+}
+
+/* Placeholder Styling */
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+    color     : #a0a0a0;
+    font-style: italic;
+}
+
+/* Submit Button */
+.booking-form button[type="submit"] {
+    display         : block;
+    width           : 100%;
+    /* Full width button */
+    padding         : 15px 25px;
+    background-color: darkgreen;
+    /* Main spa color */
+    color           : #ffffff;
+    border          : none;
+    border-radius   : 8px;
+    font-size       : 1.15em;
+    font-weight     : 600;
+    cursor          : pointer;
+    transition      : background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing  : 0.5px;
+}
+
+.booking-form button[type="submit"]:hover {
+    background-color: green;
+    /* Darker shade on hover */
+    transform       : translateY(-2px);
+    /* Slight lift effect */
+}
+
+.booking-form button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .booking-form {
+        padding: 30px 25px;
+        margin : 20px;
+    }
+
+    .booking-form h2 {
+        font-size: 1.8em;
+    }
+
+    .booking-grid {
+        grid-template-columns: 1fr;
+        /* Single column on smaller screens */
+        gap                  : 20px;
+    }
+
+    .booking-form button[type="submit"] {
+        font-size: 1em;
+        padding  : 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .booking-form {
+        padding: 20px 15px;
+        margin : 10px;
+    }
+}

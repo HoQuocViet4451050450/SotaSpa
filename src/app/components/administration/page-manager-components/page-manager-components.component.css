@@ -1,0 +1,338 @@
+body {
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+  background : #f4f6f8;
+  margin     : 0;
+  color      : #222;
+}
+
+.container {
+  max-width    : 100%;
+  margin       : 40px auto;
+  background   : #fff;
+  border-radius: 12px;
+  box-shadow   : 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding      : 32px 40px 24px 40px;
+}
+
+.admin-header {
+  background   : darkgreen;
+  color        : #fff;
+  padding      : 24px 0 16px 0;
+  border-radius: 8px 8px 0 0;
+  text-align   : center;
+  margin-bottom: 32px;
+}
+
+.admin-header h1 {
+  margin        : 0;
+  font-size     : 2.2rem;
+  font-weight   : 700;
+  letter-spacing: 1px;
+}
+
+.admin-nav {
+  display        : flex;
+  gap            : 16px;
+  margin-bottom  : 32px;
+  justify-content: center;
+}
+
+.admin-nav button {
+  background   : darkgreen;
+  color        : #fff;
+  border       : none;
+  padding      : 12px 28px;
+  border-radius: 6px;
+  font-size    : 1rem;
+  font-weight  : 500;
+  cursor       : pointer;
+  transition   : background 0.2s;
+}
+
+.contact-info {
+  background-color       : #004d40;
+  border-top-left-radius : 20px;
+  border-top-right-radius: 20px;
+  text-align             : center;
+  /* Căn giữa nội dung dạng text */
+  padding                : 8.5px 20px;
+
+  .contact-row {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    flex-wrap      : wrap;
+    /* Đảm bảo không tràn nếu nội dung dài */
+  }
+
+  .contact-info-span {
+    color    : white;
+    font-size: 16px;
+    animation: fadeInUp 1.2s ease forwards;
+    margin   : 0 5px;
+    /* Khoảng cách giữa các phần */
+  }
+}
+
+.admin-nav button:hover,
+.admin-nav button.active {
+  background: green;
+  color     : #fff;
+}
+
+section.fade-in {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity  : 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity  : 1;
+    transform: none;
+  }
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color     : green;
+  margin-top: 0;
+}
+
+.form-grid {
+  display  : flex;
+  gap      : 24px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display       : flex;
+  flex-direction: column;
+  margin-bottom : 18px;
+  flex          : 1;
+  min-width     : 180px;
+}
+
+.form-group label {
+  font-weight  : 500;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+textarea {
+  padding      : 10px 12px;
+  border       : 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size    : 1rem;
+  background   : #f9fafb;
+  transition   : border 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #1abc9c;
+  outline     : none;
+}
+
+textarea {
+  min-height: 60px;
+  resize    : vertical;
+}
+
+.btn-success,
+.btn-edit,
+.btn-delete {
+  padding      : 8px 18px;
+  border-radius: 5px;
+  border       : none;
+  font-size    : 1rem;
+  font-weight  : 500;
+  margin-right : 6px;
+  cursor       : pointer;
+  transition   : background 0.2s;
+}
+
+.btn-success {
+  background: #1abc9c;
+  color     : #fff;
+}
+
+.btn-success:hover {
+  background: #159c85;
+}
+
+.btn-edit {
+  background   : #f1c40f;
+  color        : #fff;
+  margin-bottom: 10px;
+  /* tăng khoảng cách */
+}
+
+.btn-edit:hover {
+  background: #d4ac0d;
+}
+
+.btn-delete {
+  background: #e74c3c;
+  color     : #fff;
+}
+
+.btn-delete:hover {
+  background: #c0392b;
+}
+
+.search-filter {
+  display: flex;
+  gap    : 12px;
+  margin : 18px 0 24px 0;
+}
+
+.search-filter input[type="text"] {
+  flex: 1;
+}
+
+table {
+  width          : 100%;
+  border-collapse: collapse;
+  margin-bottom  : 32px;
+  background     : #fff;
+  border-radius  : 8px;
+  overflow       : hidden;
+  box-shadow     : 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+th,
+td {
+  padding   : 12px 10px;
+  text-align: left;
+}
+
+th {
+  background : #f4f6f8;
+  font-weight: 600;
+  color      : #2d3e50;
+}
+
+tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+tr:hover {
+  background: #eafaf1;
+}
+
+.noidung-box {
+  max-width    : 220px;
+  max-height   : 60px;
+  overflow     : auto;
+  background   : #f4f6f8;
+  border-radius: 4px;
+  padding      : 6px 8px;
+  font-size    : 0.98rem;
+}
+
+img {
+  border-radius: 6px;
+  box-shadow   : 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+footer.admin-footer {
+  text-align: center;
+  color     : #888;
+  margin-top: 40px;
+  font-size : 1rem;
+  padding   : 18px 0 0 0;
+  border-top: 1px solid #e1e4e8;
+  background: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding      : 16px 4vw 16px 4vw;
+    box-shadow   : none;
+    border-radius: 0;
+    margin       : 0;
+  }
+
+  .admin-header {
+    font-size    : 1.2rem;
+    padding      : 16px 0 10px 0;
+    border-radius: 0;
+  }
+
+  .admin-nav {
+    flex-direction: column;
+    gap           : 8px;
+    margin-bottom : 20px;
+  }
+
+  .form-grid {
+    flex-direction: column;
+    gap           : 0;
+  }
+
+  .form-group {
+    min-width    : unset;
+    margin-bottom: 12px;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width  : 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 18px;
+    border-bottom: 1px solid #eee;
+    background   : #fff;
+  }
+
+  td {
+    padding   : 8px 4px;
+    text-align: left;
+    position  : relative;
+  }
+
+  td:before {
+    content      : attr(data-label);
+    font-weight  : bold;
+    display      : block;
+    margin-bottom: 2px;
+    color        : #1abc9c;
+  }
+
+  .noidung-box {
+    max-width : 100%;
+    max-height: 80px;
+    font-size : 1rem;
+  }
+
+  .search-filter {
+    flex-direction: column;
+    gap           : 6px;
+  }
+
+  img {
+    width    : 100% !important;
+    max-width: 220px;
+    height   : auto;
+  }
+}

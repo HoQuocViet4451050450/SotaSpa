@@ -1,0 +1,65 @@
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<section class="contact-info">
+  <div class="contact-row">
+    <span class="contact-info-span">
+      <i class="fas fa-phone"></i> 0796 781 024 |
+      <i class="fas fa-envelope"></i> hqv&#64;hungvietphat.io.vn
+    </span>
+  </div>
+</section>
+
+<body>
+  <header class="hero-section">
+    <div class="overlay"></div>
+
+    <nav class="menu">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="assets/images/Logobest.png" alt="Logo" />
+        </div>
+      </div>
+      <!-- Nút 3 gạch: hiện trên mobile -->
+      <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+<ul class="nav-list">
+  <li><a (click)="navigateTo('')">TRANG CHỦ</a></li>
+  <li><a (click)="navigateTo('introduction')">GIỚI THIỆU</a></li>
+  <li><a (click)="navigateTo('menu')">DỊCH VỤ</a></li>
+  <li><a (click)="navigateTo('promotionPoster')">KHUYẾN MẠI</a></li>
+  <li><a (click)="navigateTo('blogPage')">BLOG</a></li>
+  <li><a (click)="navigateTo('lien-he')">LIÊN HỆ</a></li>
+  <li><a (click)="navigateTo('dat-lich')">ĐẶT LỊCH NGAY</a></li>
+</ul>
+    </nav>
+    <!-- Menu responsive (có nút X để đóng) -->
+    <div class="nav-overlay-responsive" [class.active]="menuActive">
+      <button class="close-btn" (click)="menuActive = false">✕</button>
+<ul class="nav-list">
+  <li><a (click)="navigateTo('')">TRANG CHỦ</a></li>
+  <li><a (click)="navigateTo('introduction')">GIỚI THIỆU</a></li>
+  <li><a (click)="navigateTo('menu')">DỊCH VỤ</a></li>
+  <li><a (click)="navigateTo('promotionPoster')">KHUYẾN MẠI</a></li>
+  <li><a (click)="navigateTo('blogPage')">BLOG</a></li>
+  <li><a (click)="navigateTo('lien-he')">LIÊN HỆ</a></li>
+  <li><a (click)="navigateTo('dat-lich')">ĐẶT LỊCH NGAY</a></li>
+</ul>
+    </div>
+
+    <div class="content">
+      <h1>Chào mừng đến với <br> <h1 style="color: #f1c40f;">Sota Spa 🌿</h1></h1>
+      <p>
+        Trải nghiệm sự thư giãn và phục hồi tại Sota Spa — nơi yên bình hòa quyện với sự sang trọng.
+        Hãy để cơ thể và tâm trí bạn được chăm sóc với các liệu trình spa cao cấp của chúng tôi. |
+        <span style="color: #f1c40f;">Blog</span>
+      </p>
+      <div class="buttons">
+        <a class="btn green" (click)="navigateTo('introduction')">
+          <i class="fas fa-search"></i> Khám phá dịch vụ
+        </a>
+        <a class="btn yellow" (click)="navigateTo('dat-lich')">
+          <i class="fas fa-calendar-check"></i> Đặt lịch ngay
+        </a>
+      </div>
+    </div>
+
+  </header>
+</body>

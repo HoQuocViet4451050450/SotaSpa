@@ -1,0 +1,18 @@
+<app-headerbest-blog-components></app-headerbest-blog-components>
+<section class="intro-banner">
+  <h2>Chia sẻ kiến thức & bí quyết làm đẹp tại</h2>
+  <h1>Sota – Spa & Beauty</h1>
+  <h4>
+    Cập nhật các bài viết hữu ích về chăm sóc da, xu hướng làm đẹp, dinh dưỡng và phong cách sống lành mạnh – tất cả được chia sẻ từ đội ngũ chuyên gia của Sota. Đừng bỏ lỡ những thông tin thú vị giúp bạn nâng tầm vẻ đẹp mỗi ngày!
+  </h4>
+</section>
+<div class="blog-detail-container" *ngIf="blog">
+  <h1>{{ blog.tieude }}</h1>
+  <p><strong>Ngày đăng:</strong> {{ blog.ngaydang | date: 'dd-MM-yyyy HH:mm:ss' }}</p>
+  <p><strong>Lượt xem:</strong> {{ blog.luotxem }} ❤️ {{ blog.luotthich }}</p>
+  <img *ngIf="blog.hinhanh" [src]="blog.hinhanh" alt="Ảnh blog" class="blog-detail-image" />
+  <p><em>{{ blog.tieudephu }}</em></p>
+  <div [innerHTML]="blog.noidung"></div>
+</div>
+
+<app-footer-components></app-footer-components>
