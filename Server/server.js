@@ -4,14 +4,28 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
-const app = express();
-const allowedOrigins = ["https://sotaspaofficial.onrender.com"];
+// Thêm các origin bạn muốn cho phép
+const allowedOrigins = [
+  "https://sotaspaofficial.onrender.com",
+  "https://www.hungvietphat.io.vn",
+  // Thêm origin khác tại đây nếu cần
+];
+
 app.use(
   cors({
-    origin: allowedOrigins,
-    credentials: true, // nếu có dùng cookie hoặc auth header
+    origin: function (origin, callback) {
+      // Cho phép request không có origin (như từ curl hoặc Postman)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
   })
 );
+
 app.use(bodyParser.json());
 // Cho phép từ frontend cụ thể
 // Import routes
