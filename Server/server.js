@@ -5,9 +5,16 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const app = express();
+const allowedOrigins = ["https://sotaspaofficial.onrender.com"];
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true, // nếu có dùng cookie hoặc auth header
+  })
+);
 app.use(cors());
 app.use(bodyParser.json());
-
+// Cho phép từ frontend cụ thể
 // Import routes
 const blogRoutes = require("../Router/blog");
 const introductionRoutes = require("../Router/introduction");
