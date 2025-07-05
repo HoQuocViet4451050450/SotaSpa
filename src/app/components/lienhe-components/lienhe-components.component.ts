@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
+import { Title, Meta } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-lienhe-components',
   templateUrl: './lienhe-components.component.html',
@@ -7,8 +9,41 @@ import * as L from 'leaflet';
 })
 export class LienheComponentsComponent {
   private map: any;
+  constructor(private titleService: Title, private metaService: Meta) {}
 
   ngOnInit(): void {
+    // Thiết lập SEO động
+    this.titleService.setTitle('Liên hệ Sota Spa – Tư vấn và Đặt lịch');
+    this.metaService.addTags([
+      {
+        name: 'description',
+        content:
+          'Liên hệ Sota Spa để được tư vấn liệu trình, đặt lịch hẹn hoặc hợp tác. Chúng tôi luôn sẵn sàng lắng nghe và phục vụ bạn.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'Liên hệ Sota Spa, Đặt lịch spa, Tư vấn làm đẹp, Sota Spa hỗ trợ khách hàng, Gọi spa, Địa chỉ Sota Spa',
+      },
+      { name: 'author', content: 'Sota Spa' },
+      { name: 'robots', content: 'index, follow' },
+      { property: 'og:title', content: 'Liên hệ – Sota Spa & Beauty' },
+      {
+        property: 'og:description',
+        content:
+          'Gọi ngay hoặc gửi yêu cầu để được Sota Spa tư vấn chi tiết về các dịch vụ làm đẹp, massage và chăm sóc da.',
+      },
+      {
+        property: 'og:image',
+        content:
+          'https://sotaspaofficial.onrender.com/assets/images/LogoNewR.jpg',
+      },
+      {
+        property: 'og:url',
+        content: 'https://sotaspaofficial.onrender.com/#/lien-he',
+      },
+      { property: 'og:type', content: 'website' },
+    ]);
     // Tọa độ địa điểm (135/3 Thành Thái, Quy Nhơn, Bình Định)
     const targetCoords: L.LatLngExpression = [
       13.763319482353474, 109.20244596207611,

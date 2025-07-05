@@ -1,14 +1,8 @@
 import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 import { ServicePromotionService } from '../services/service-promotion.service';
 import { Router } from '@angular/router';
-import {
-  trigger,
-  style,
-  animate,
-  transition,
-  query,
-  stagger,
-} from '@angular/animations';
+import { trigger, style, animate, transition } from '@angular/animations';
+import { Title, Meta } from '@angular/platform-browser'; // ✅ Import SEO
 
 @Component({
   selector: 'app-promotion-poster-components',
@@ -41,10 +35,57 @@ export class PromotionPosterComponentsComponent
   constructor(
     private Service: ServicePromotionService,
     private router: Router,
-    private el: ElementRef
+    private el: ElementRef,
+    private title: Title, // ✅ Inject SEO services
+    private meta: Meta // ✅ Inject SEO services
   ) {}
 
   ngOnInit(): void {
+    // ✅ SEO Title + Meta
+    this.title.setTitle(
+      'Ưu đãi đặc biệt – Sota Spa | Giảm giá các liệu trình làm đẹp'
+    );
+
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Khuyến mãi tại Sota Spa: Giảm giá đến 50% các liệu trình massage, chăm sóc da và combo thư giãn đặc biệt. Đặt lịch ngay!',
+    });
+
+    this.meta.updateTag({
+      name: 'keywords',
+      content:
+        'Khuyến mãi Spa, Ưu đãi Sota Spa, Giảm giá Massage, Liệu trình làm đẹp, Combo thư giãn, Sota Spa ưu đãi',
+    });
+
+    this.meta.updateTag({ name: 'author', content: 'Sota Spa' });
+    this.meta.updateTag({ name: 'robots', content: 'index, follow' });
+
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Ưu đãi đặc biệt tại Sota Spa – Giảm giá các liệu trình làm đẹp',
+    });
+
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Sota Spa ưu đãi lớn – Giảm 30-50% cho mọi dịch vụ massage, chăm sóc da, combo liệu trình. Cơ hội làm đẹp tiết kiệm!',
+    });
+
+    this.meta.updateTag({
+      property: 'og:image',
+      content:
+        'https://sotaspaofficial.onrender.com/assets/images/LogoNewR.jpg',
+    });
+
+    this.meta.updateTag({
+      property: 'og:url',
+      content: 'https://sotaspaofficial.onrender.com/#/promotion',
+    });
+
+    this.meta.updateTag({ property: 'og:type', content: 'website' });
+
+    // ✅ Load dữ liệu
     this.loadPromotions();
   }
 
@@ -54,7 +95,6 @@ export class PromotionPosterComponentsComponent
       nguoidang: '',
       tieude: '',
       tieudephu: '',
-      // ngaydang không có vì tự động tạo ở backend
       ngaybatdau: '',
       ngayhethan: '',
       luotxem: 0,

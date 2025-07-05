@@ -8,6 +8,8 @@ import {
   stagger,
 } from '@angular/animations';
 import { ServiceMenuService } from '../services/service-menu.service';
+import { Title, Meta } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-menu-components',
   templateUrl: './menu-components.component.html',
@@ -32,13 +34,51 @@ export class MenuComponentsComponent implements OnInit, AfterViewInit {
 
   constructor(
     private el: ElementRef,
-    private serviceMenu: ServiceMenuService
+    private serviceMenu: ServiceMenuService,
+    private titleService: Title,
+    private metaService: Meta
   ) {}
 
   ngOnInit(): void {
     this.loadDichVu();
+    this.setSEO();
   }
+  setSEO(): void {
+    this.titleService.setTitle('Dịch Vụ Spa Chuyên Nghiệp – Sota Spa & Beauty');
 
+    this.metaService.addTags([
+      {
+        name: 'description',
+        content:
+          'Khám phá các dịch vụ spa chuyên nghiệp tại Sota Spa: massage thư giãn, chăm sóc da, trị liệu cơ thể và liệu trình cao cấp.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'Dịch vụ Spa, Massage thư giãn, Chăm sóc da, Liệu trình trị liệu, Spa chuyên nghiệp, Sota Spa, Làm đẹp, Thải độc da, Combo chăm sóc cơ thể',
+      },
+      { name: 'author', content: 'Sota Spa' },
+      { name: 'robots', content: 'index, follow' },
+
+      // Open Graph (OG)
+      { property: 'og:title', content: 'Dịch Vụ Làm Đẹp – Sota Spa & Beauty' },
+      {
+        property: 'og:description',
+        content:
+          'Sota Spa mang đến các dịch vụ làm đẹp chuyên nghiệp: chăm sóc da, massage, trị liệu thư giãn, thải độc và nhiều combo đặc biệt.',
+      },
+      {
+        property: 'og:image',
+        content:
+          'https://sotaspaofficial.onrender.com/assets/images/LogoNewR.jpg',
+      },
+      {
+        property: 'og:url',
+        content: 'https://sotaspaofficial.onrender.com/#/menu',
+      },
+      { property: 'og:type', content: 'website' },
+    ]);
+  }
   loadDichVu(): void {
     this.serviceMenu.getAll().subscribe((res) => {
       const grouped: any = {};

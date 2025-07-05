@@ -1,81 +1,48 @@
 <app-headerbest-dichvu-components></app-headerbest-dichvu-components>
 <app-floating-social-components></app-floating-social-components>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dịch vụ Spa & Beauty toàn diện tại Sota | Chăm sóc da, Massage, Trị liệu</title>
 
-    <meta name="description" content="Khám phá các dịch vụ chăm sóc da chuyên sâu, massage thư giãn, và liệu trình trị liệu cao cấp tại Sota Spa & Beauty. Nơi tái tạo năng lượng và vẻ đẹp tự nhiên của bạn.">
-    <meta name="keywords" content="dịch vụ spa, chăm sóc da, massage thư giãn, trị liệu spa, làm đẹp, Sota Spa, liệu trình spa, spa cao cấp">
-    <meta name="author" content="Sota Spa">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="http://localhost:4200/dich-vu" />
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4200/dich-vu">
-    <meta property="og:title" content="Dịch vụ Spa & Beauty toàn diện tại Sota | Chăm sóc da, Massage, Trị liệu">
-    <meta property="og:description" content="Khám phá các dịch vụ chăm sóc da chuyên sâu, massage thư giãn, và liệu trình trị liệu cao cấp tại Sota Spa & Beauty. Nơi tái tạo năng lượng và vẻ đẹp tự nhiên của bạn.">
-    <meta property="og:image" content="https://yourdomain.com/assets/images/sota-spa-services-og-image.jpg">
-    <meta property="og:site_name" content="Sota – Spa & Beauty">
-    <meta property="og:locale" content="vi_VN">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="http://localhost:4200/dich-vu">
-    <meta name="twitter:title" content="Dịch vụ Spa & Beauty toàn diện tại Sota | Chăm sóc da, Massage, Trị liệu">
-    <meta name="twitter:description" content="Khám phá các dịch vụ chăm sóc da chuyên sâu, massage thư giãn, và liệu trình trị liệu cao cấp tại Sota Spa & Beauty. Nơi tái tạo năng lượng và vẻ đẹp tự nhiên của bạn.">
-    <meta name="twitter:image" content="https://yourdomain.com/assets/images/sota-spa-services-twitter-image.jpg">
-
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-</head>
 <section class="intro-banner scroll-fade-in">
   <h2>Trải nghiệm dịch vụ làm đẹp toàn diện tại</h2>
   <h1>Sota – Spa & Beauty</h1>
   <h4>
-    Từ chăm sóc da chuyên sâu, massage thư giãn, đến các liệu trình trị liệu hiện đại – Sota mang đến sự thư thái, tái tạo năng lượng và vẻ đẹp tự nhiên cho bạn mỗi ngày.
+    Từ chăm sóc da chuyên sâu, massage thư giãn, đến các liệu trình trị liệu hiện đại – Sota mang đến sự thư thái, tái
+    tạo năng lượng và vẻ đẹp tự nhiên cho bạn mỗi ngày.
   </h4>
 
 </section>
 
 <body>
-<div class="services">
-  <div *ngFor="let dv of paginatedDichvus" class="card">
-    <h3>{{ dv.tendichvu }}</h3>
-    <p>{{ dv.mota }}</p>
+  <div class="services">
+    <div *ngFor="let dv of paginatedDichvus" class="card">
+      <h3>{{ dv.tendichvu }}</h3>
+      <p>{{ dv.mota }}</p>
 
-    <ul *ngIf="dv.gois.length > 0; else noGoi">
-<li *ngFor="let goi of dv.gois" class="goi-item">
-  <span>{{ goi.solan }} lần</span>
-  <h4>{{ goi.gia | number:'1.0-0' }}đ</h4>
-</li>
-    </ul>
+      <ul *ngIf="dv.gois.length > 0; else noGoi">
+        <li *ngFor="let goi of dv.gois" class="goi-item">
+          <span>{{ goi.solan }} lần</span>
+          <h4>{{ goi.gia | number:'1.0-0' }}đ</h4>
+        </li>
+      </ul>
 
-    <ng-template #noGoi>
-      <p><em>Chưa có gói dịch vụ</em></p>
-    </ng-template>
+      <ng-template #noGoi>
+        <p><em>Chưa có gói dịch vụ</em></p>
+      </ng-template>
+    </div>
   </div>
-</div>
-<div class="pagination" style="text-align: center; margin: 20px 0;">
-  <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">
-    ← Trang trước
-  </button>
+  <div class="pagination" style="text-align: center; margin: 20px 0;">
+    <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">
+      ← Trang trước
+    </button>
 
-  <button
-    *ngFor="let page of [].constructor(totalPages()); let i = index"
-    (click)="setPage(i + 1)"
-    [class.active]="currentPage === i + 1"
-    style="margin: 0 5px;"
-  >
-    {{ i + 1 }}
-  </button>
+    <button *ngFor="let page of [].constructor(totalPages()); let i = index" (click)="setPage(i + 1)"
+      [class.active]="currentPage === i + 1" style="margin: 0 5px;">
+      {{ i + 1 }}
+    </button>
 
-  <button
-    (click)="setPage(currentPage + 1)"
-    [disabled]="currentPage === totalPages()"
-  >
-    Trang sau →
-  </button>
-</div>
+    <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages()">
+      Trang sau →
+    </button>
+  </div>
 
 </body>
 <app-promotion-components></app-promotion-components>

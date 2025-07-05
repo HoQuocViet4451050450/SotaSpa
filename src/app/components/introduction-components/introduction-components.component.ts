@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-introduction-components',
@@ -25,7 +26,49 @@ export class IntroductionComponentsComponent implements AfterViewInit {
   private rightPressed = false;
   private leftPressed = false;
 
-  constructor(private el: ElementRef) {}
+  constructor(
+    private el: ElementRef,
+    private titleService: Title,
+    private metaService: Meta
+  ) {
+    // ✅ Đặt tiêu đề trang
+    this.titleService.setTitle(
+      'Giới thiệu – Sota Spa & Beauty | Tận tâm & Chuyên nghiệp'
+    );
+
+    // ✅ Cập nhật các thẻ meta
+    this.metaService.addTags([
+      {
+        name: 'description',
+        content:
+          'Khám phá hành trình và giá trị của Sota Spa – Spa & Beauty uy tín, nơi mang đến trải nghiệm thư giãn và làm đẹp chuyên biệt.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'Giới thiệu Sota Spa, Spa uy tín, Chăm sóc sắc đẹp, Liệu trình cao cấp, Dịch vụ spa chuyên nghiệp',
+      },
+      { name: 'author', content: 'Sota Spa' },
+      { name: 'robots', content: 'index, follow' },
+
+      { property: 'og:title', content: 'Giới thiệu – Sota Spa & Beauty' },
+      {
+        property: 'og:description',
+        content:
+          'Sota Spa – Địa chỉ chăm sóc sắc đẹp & thư giãn hàng đầu. Tận tâm – Chuyên nghiệp – Đẳng cấp.',
+      },
+      {
+        property: 'og:image',
+        content:
+          'https://sotaspaofficial.onrender.com/assets/images/LogoNewR.jpg',
+      },
+      {
+        property: 'og:url',
+        content: 'https://sotaspaofficial.onrender.com/#/introduction',
+      },
+      { property: 'og:type', content: 'website' },
+    ]);
+  }
 
   ngAfterViewInit(): void {
     this.canvas = this.el.nativeElement.querySelector(

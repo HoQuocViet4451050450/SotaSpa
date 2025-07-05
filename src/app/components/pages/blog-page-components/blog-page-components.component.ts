@@ -10,6 +10,7 @@ import {
   stagger,
 } from '@angular/animations';
 import { ServiceIdEncoderServiceService } from '../../services/service-id-encoder-service.service';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog-page-components',
@@ -41,13 +42,48 @@ export class BlogPageComponentsComponent implements OnInit, AfterViewInit {
     private Service: ServiceBlogService,
     private router: Router,
     private el: ElementRef,
-    private idEncoderService: ServiceIdEncoderServiceService
+    private idEncoderService: ServiceIdEncoderServiceService,
+    private titleService: Title,
+    private metaService: Meta
   ) {}
 
   ngOnInit(): void {
+    this.setMetaTags(); // Gọi hàm SEO
     this.loadBlogs();
   }
-
+  setMetaTags(): void {
+    this.titleService.setTitle('Blogs Làm Đẹp & Chăm Sóc Da – Sota Spa');
+    this.metaService.addTags([
+      {
+        name: 'description',
+        content:
+          'Khám phá các bài viết chia sẻ kiến thức làm đẹp, chăm sóc da, bí quyết thư giãn và cập nhật xu hướng spa mới nhất từ Sota Spa.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'Blog Spa, Kiến thức làm đẹp, Chăm sóc da, Massage thư giãn, Bí quyết spa, Tin tức làm đẹp, Sota Spa Blog',
+      },
+      { name: 'author', content: 'Sota Spa' },
+      { name: 'robots', content: 'index, follow' },
+      { property: 'og:title', content: 'Blog Làm Đẹp – Sota Spa' },
+      {
+        property: 'og:description',
+        content:
+          'Tổng hợp bài viết chia sẻ kiến thức chăm sóc da, liệu trình spa chuyên sâu và mẹo làm đẹp từ chuyên gia Sota Spa.',
+      },
+      {
+        property: 'og:image',
+        content:
+          'https://sotaspaofficial.onrender.com/assets/images/LogoNewR.jpg',
+      },
+      {
+        property: 'og:url',
+        content: 'https://sotaspaofficial.onrender.com/#/blogPage',
+      },
+      { property: 'og:type', content: 'website' },
+    ]);
+  }
   getEmptyForm() {
     return {
       id: null,

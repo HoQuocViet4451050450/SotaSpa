@@ -3,15 +3,54 @@ import {
   AfterViewInit,
   ElementRef,
   HostListener,
+  OnInit,
 } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-trang-chu-components',
   templateUrl: './trang-chu-components.component.html',
   styleUrls: ['./trang-chu-components.component.css'],
 })
-export class TrangChuComponentsComponent implements AfterViewInit {
-  constructor(private el: ElementRef) {}
+export class TrangChuComponentsComponent implements AfterViewInit, OnInit {
+  constructor(
+    private el: ElementRef,
+    private title: Title,
+    private meta: Meta
+  ) {}
+  ngOnInit(): void {
+    this.title.setTitle('Sota – Spa & Beauty | Thư giãn và Làm đẹp');
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Sota – Spa & Beauty: Nơi thư giãn, chăm sóc sắc đẹp và tái tạo năng lượng với các liệu trình cao cấp, thiết kế riêng biệt.',
+    });
+    this.meta.updateTag({
+      name: 'keywords',
+      content:
+        'Spa, Làm đẹp, Thư giãn, Sota Spa, Massage, Chăm sóc da, Trị liệu',
+    });
+
+    // Open Graph tags (Facebook, Zalo... dùng)
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Sota – Spa & Beauty',
+    });
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Thư giãn & làm đẹp với các liệu trình chuyên biệt tại Sota Spa.',
+    });
+    this.meta.updateTag({
+      property: 'og:image',
+      content:
+        'https://sotaspaofficial.onrender.com/assets/images/LogoNewR.jpg',
+    });
+    this.meta.updateTag({
+      property: 'og:url',
+      content: 'https://sotaspaofficial.onrender.com/',
+    });
+  }
 
   ngAfterViewInit(): void {
     const elements = this.el.nativeElement.querySelectorAll('.scroll-fade-in');
