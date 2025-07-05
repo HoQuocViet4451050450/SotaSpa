@@ -12,7 +12,6 @@ app.use(
     credentials: true, // nếu có dùng cookie hoặc auth header
   })
 );
-app.use(cors());
 app.use(bodyParser.json());
 // Cho phép từ frontend cụ thể
 // Import routes
