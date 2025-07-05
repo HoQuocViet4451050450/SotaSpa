@@ -6,15 +6,26 @@ const bodyParser = require("body-parser");
 
 const app = express(); // 👈 Phải đặt trước mọi app.use
 
+// ✅ Redirect www → non-www
+app.use((req, res, next) => {
+  if (req.headers.host && req.headers.host.startsWith("www.")) {
+    const newHost = req.headers.host.replace(/^www\./, "");
+    return res.redirect(301, req.protocol + "://" + newHost + req.originalUrl);
+  }
+  next();
+});
+
+// CORS cấu hình
 const allowedOrigins = [
   "https://sotaspaofficial.onrender.com",
   "https://www.hungvietphat.io.vn",
+  "https://hungvietphat.io.vn",
 ];
 
 app.use(
   cors({
     origin: allowedOrigins,
-    credentials: true, // nếu có dùng cookie hoặc auth header
+    credentials: true,
   })
 );
 
