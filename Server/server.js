@@ -6,7 +6,6 @@ const bodyParser = require("body-parser");
 
 // Thêm các origin bạn muốn cho phép
 const allowedOrigins = [
-  "https://sotaspaofficial.onrender.com",
   "https://www.hungvietphat.io.vn",
   // Thêm origin khác tại đây nếu cần
 ];
