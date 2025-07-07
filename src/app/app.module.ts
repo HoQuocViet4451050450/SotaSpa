@@ -95,9 +95,7 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [
-    /*{ provide: LocationStrategy, useClass: HashLocationStrategy }*/
-  ],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
