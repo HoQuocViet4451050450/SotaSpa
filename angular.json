@@ -30,7 +30,7 @@
   "src/robots.txt",
   {
     "glob": "sitemap.xml",
-    "input": "src/assets",
+    "input": "src",
     "output": "."
   },
   {
