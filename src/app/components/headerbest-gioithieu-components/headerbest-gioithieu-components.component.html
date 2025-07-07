@@ -20,33 +20,34 @@
       </div>
       <!-- Nút 3 gạch: hiện trên mobile -->
       <button class="menu-toggle" (click)="toggleMenu()">☰</button>
-<ul>
-  <li><a (click)="navigateTo('')">TRANG CHỦ</a></li>
-  <li><a (click)="navigateTo('introduction')">GIỚI THIỆU</a></li>
-  <li><a (click)="navigateTo('menu')">DỊCH VỤ</a></li>
-  <li><a (click)="navigateTo('promotionPoster')">KHUYẾN MẠI</a></li>
-  <li><a (click)="navigateTo('blogPage')">BLOG</a></li>
-  <li><a (click)="navigateTo('lien-he')">LIÊN HỆ</a></li>
-  <li><a (click)="navigateTo('dat-lich')">ĐẶT LỊCH NGAY</a></li>
-</ul>
+      <ul>
+        <li><a href="#/">TRANG CHỦ</a></li>
+        <li><a href="#/introduction">GIỚI THIỆU</a></li>
+        <li><a href="#/menu">DỊCH VỤ</a></li>
+        <li><a href="#/promotionPoster">KHUYẾN MẠI</a></li>
+        <li><a href="#/blogPage">BLOG</a></li>
+        <li><a href="#/lien-he">LIÊN HỆ</a></li>
+        <li><a href="#/dat-lich">ĐẶT LỊCH NGAY</a></li>
+      </ul>
     </nav>
     <!-- Menu responsive (có nút X để đóng) -->
     <div class="nav-overlay-responsive" [class.active]="menuActive">
       <button class="close-btn" (click)="menuActive = false">✕</button>
-<ul class="nav-list">
-  <li><a (click)="navigateTo('')">TRANG CHỦ</a></li>
-  <li><a (click)="navigateTo('introduction')">GIỚI THIỆU</a></li>
-  <li><a (click)="navigateTo('menu')">DỊCH VỤ</a></li>
-  <li><a (click)="navigateTo('promotionPoster')">KHUYẾN MẠI</a></li>
-  <li><a (click)="navigateTo('blogPage')">BLOG</a></li>
-  <li><a (click)="navigateTo('lien-he')">LIÊN HỆ</a></li>
-  <li><a (click)="navigateTo('dat-lich')">ĐẶT LỊCH NGAY</a></li>
-</ul>
+      <ul class="nav-list">
+        <li><a href="#/">TRANG CHỦ</a></li>
+        <li><a href="#/introduction">GIỚI THIỆU</a></li>
+        <li><a href="#/menu">DỊCH VỤ</a></li>
+        <li><a href="#/promotionPoster">KHUYẾN MẠI</a></li>
+        <li><a href="#/blogPage">BLOG</a></li>
+        <li><a href="#/lien-he">LIÊN HỆ</a></li>
+        <li><a href="#/dat-lich">ĐẶT LỊCH NGAY</a></li>
+      </ul>
     </div>
 
-
     <div class="content">
-      <h1>Chào mừng đến với <br> <h1 style="color: #f1c40f;">Sota Spa 🌿</h1></h1>
+      <h1>Chào mừng đến với <br>
+        <h1 style="color: #f1c40f;">Sota Spa 🌿</h1>
+      </h1>
       <p>
         Trải nghiệm sự thư giãn và phục hồi tại Sota Spa — nơi yên bình hòa quyện với sự sang trọng.
         Hãy để cơ thể và tâm trí bạn được chăm sóc với các liệu trình spa cao cấp của chúng tôi. |
@@ -61,7 +62,6 @@
         </a>
       </div>
     </div>
-
 
   </header>
 </body>
