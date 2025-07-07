@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hungvietphat.io.vn/</loc>
+    <loc>https://hungvietphat.io.vn/#/</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
     <url>
-    <loc>https://hungvietphat.io.vn/introduction</loc>
+    <loc>https://hungvietphat.io.vn/#/introduction</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
       <url>
-    <loc>https://hungvietphat.io.vn/lien-he</loc>
+    <loc>https://hungvietphat.io.vn/#/lien-he</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
        <url>
-    <loc>https://hungvietphat.io.vn/dat-lich</loc>
+    <loc>https://hungvietphat.io.vn/#/dat-lich</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
          <url>
-    <loc>https://hungvietphat.io.vn/blogPage</loc>
+    <loc>https://hungvietphat.io.vn/#/blogPage</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
           <url>
-    <loc>https://hungvietphat.io.vn/promotionPoster</loc>
+    <loc>https://hungvietphat.io.vn/#/promotionPoster</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
             <url>
-    <loc>https://hungvietphat.io.vn/menu</loc>
+    <loc>https://hungvietphat.io.vn/#/menu</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
               <url>
-    <loc>https://hungvietphat.io.vn/pageManager</loc>
+    <loc>https://hungvietphat.io.vn/#/pageManager</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
