@@ -2,7 +2,6 @@
    margin     : 0;
    padding    : 0;
    box-sizing : border-box;
-   font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
  }
 
  body {
@@ -10,6 +9,8 @@
    color     : #333;
    padding   : 20px 20px;
    margin-top: 0px;
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+
  }
 
  h1 {
@@ -172,7 +173,6 @@
    padding    : 40px 20px;
    margin-top : 30px;
    color      : white;
-   font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
    background : url('https://i.pinimg.com/736x/a5/b1/2e/a5b12ebca9f10b96c0290a76e1e8883e.jpg') center/cover no-repeat;
    overflow   : hidden;
  }
@@ -192,7 +192,6 @@
    position   : relative;
    z-index    : 2;
    margin     : 8px 0;
-   font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
  }
 
  .intro-banner h2 {

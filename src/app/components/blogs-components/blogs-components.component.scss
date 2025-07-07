@@ -1,3 +1,7 @@
+body {
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+}
+
 .card-container {
   display         : flex;
   justify-content : center;
@@ -23,8 +27,6 @@
   background-position: center;
   display            : flex;
   align-items        : flex-end;
-  font-family        : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
-
   /* Đẩy nội dung xuống dưới */
 }
 

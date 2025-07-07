@@ -1,3 +1,6 @@
+body {
+  font-family: BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
+}
 .footer-end {
   display         : flex;
   justify-content : space-between;
@@ -8,8 +11,6 @@
   margin-top      : 30px;
   background-color: #fff;
   color           : #000;
-  font-family     : BlinkMacSystemFont, Segoe UI, Ubuntu, Arial, sans-serif;
-
   /* ✅ Thêm border-top màu đỏ */
   border-top: 1px solid #ddd;
 }

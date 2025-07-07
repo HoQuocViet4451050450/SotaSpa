@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-visit-counter-components',
   templateUrl: './visit-counter-components.component.html',
-  styleUrls: ['./visit-counter-components.component.css'],
+  styleUrls: ['./visit-counter-components.component.scss'],
 })
 export class VisitCounterComponentsComponent implements OnInit {
   visitCount = 0;
