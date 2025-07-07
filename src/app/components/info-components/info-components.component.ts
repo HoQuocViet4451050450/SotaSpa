@@ -8,7 +8,7 @@ import {
 @Component({
   selector: 'app-info-components',
   templateUrl: './info-components.component.html',
-  styleUrls: ['./info-components.component.css'],
+  styleUrls: ['./info-components.component.scss'],
 })
 export class InfoComponentsComponent implements AfterViewInit {
   constructor(private el: ElementRef) {}

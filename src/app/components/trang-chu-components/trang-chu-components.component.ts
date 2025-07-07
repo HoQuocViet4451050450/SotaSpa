@@ -10,7 +10,7 @@ import { Title, Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-trang-chu-components',
   templateUrl: './trang-chu-components.component.html',
-  styleUrls: ['./trang-chu-components.component.css'],
+  styleUrls: ['./trang-chu-components.component.scss'],
 })
 export class TrangChuComponentsComponent implements AfterViewInit, OnInit {
   constructor(

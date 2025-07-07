@@ -15,7 +15,7 @@ import { Title, Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-blog-page-components',
   templateUrl: './blog-page-components.component.html',
-  styleUrls: ['./blog-page-components.component.css'],
+  styleUrls: ['./blog-page-components.component.scss'],
   animations: [
     trigger('fadeSlideIn', [
       transition(':enter', [

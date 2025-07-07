@@ -5,7 +5,7 @@ import { Title, Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-lienhe-components',
   templateUrl: './lienhe-components.component.html',
-  styleUrls: ['./lienhe-components.component.css'],
+  styleUrls: ['./lienhe-components.component.scss'],
 })
 export class LienheComponentsComponent {
   private map: any;

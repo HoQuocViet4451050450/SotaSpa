@@ -7,7 +7,7 @@ import { Title, Meta } from '@angular/platform-browser'; // ✅ Import SEO
 @Component({
   selector: 'app-promotion-poster-components',
   templateUrl: './promotion-poster-components.component.html',
-  styleUrls: ['./promotion-poster-components.component.css'],
+  styleUrls: ['./promotion-poster-components.component.scss'],
   animations: [
     trigger('fadeSlideIn', [
       transition(':enter', [

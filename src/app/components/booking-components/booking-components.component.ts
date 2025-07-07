@@ -5,7 +5,7 @@ import { ServiceAdvisoryService } from '../services/service-advisory.service';
 @Component({
   selector: 'app-booking-components',
   templateUrl: './booking-components.component.html',
-  styleUrls: ['./booking-components.component.css'],
+  styleUrls: ['./booking-components.component.scss'],
 })
 export class BookingComponentsComponent implements OnInit {
   danhSachDichVu: any[] = [];

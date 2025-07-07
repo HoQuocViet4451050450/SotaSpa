@@ -5,7 +5,7 @@ import { ServiceIdEncoderServiceService } from '../services/service-id-encoder-s
 @Component({
   selector: 'app-service-components',
   templateUrl: './service-components.component.html',
-  styleUrls: ['./service-components.component.css'],
+  styleUrls: ['./service-components.component.scss'],
 })
 export class ServiceComponentsComponent implements OnInit {
   blogList: any[] = [];

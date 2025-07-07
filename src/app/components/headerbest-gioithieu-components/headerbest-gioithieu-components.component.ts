@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-headerbest-gioithieu-components',
   templateUrl: './headerbest-gioithieu-components.component.html',
-  styleUrls: ['./headerbest-gioithieu-components.component.css'],
+  styleUrls: ['./headerbest-gioithieu-components.component.scss'],
 })
 export class HeaderbestGioithieuComponentsComponent {
   menuActive = false;

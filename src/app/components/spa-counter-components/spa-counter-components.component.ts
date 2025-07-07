@@ -3,7 +3,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-spa-counter-components',
   templateUrl: './spa-counter-components.component.html',
-  styleUrls: ['./spa-counter-components.component.css'],
+  styleUrls: ['./spa-counter-components.component.scss'],
 })
 export class SpaCounterComponentsComponent implements OnInit {
   userCount = 0;

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-headerbest-blog-components',
   templateUrl: './headerbest-blog-components.component.html',
-  styleUrls: ['./headerbest-blog-components.component.css'],
+  styleUrls: ['./headerbest-blog-components.component.scss'],
 })
 export class HeaderbestBlogComponentsComponent {
   menuActive = false;

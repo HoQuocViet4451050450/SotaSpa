@@ -3,7 +3,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-spa-counter-employee-components',
   templateUrl: './spa-counter-employee-components.component.html',
-  styleUrls: ['./spa-counter-employee-components.component.css'],
+  styleUrls: ['./spa-counter-employee-components.component.scss'],
 })
 export class SpaCounterEmployeeComponentsComponent {
   employee = 0;

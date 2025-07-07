@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-headerbest-dichvu-components',
   templateUrl: './headerbest-dichvu-components.component.html',
-  styleUrls: ['./headerbest-dichvu-components.component.css'],
+  styleUrls: ['./headerbest-dichvu-components.component.scss'],
 })
 export class HeaderbestDichvuComponentsComponent {
   menuActive = false;

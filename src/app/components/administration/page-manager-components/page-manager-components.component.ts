@@ -8,7 +8,7 @@ import { ServicePromotionService } from '../../services/service-promotion.servic
 @Component({
   selector: 'app-page-manager-components',
   templateUrl: './page-manager-components.component.html',
-  styleUrls: ['./page-manager-components.component.css'],
+  styleUrls: ['./page-manager-components.component.scss'],
 })
 export class PageManagerComponentsComponent implements OnInit {
   activeSection: string = 'baiviet';

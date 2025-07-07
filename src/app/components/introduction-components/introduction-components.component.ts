@@ -4,7 +4,7 @@ import { Title, Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-introduction-components',
   templateUrl: './introduction-components.component.html',
-  styleUrls: ['./introduction-components.component.css'],
+  styleUrls: ['./introduction-components.component.scss'],
 })
 export class IntroductionComponentsComponent implements AfterViewInit {
   isPaused = false;

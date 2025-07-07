@@ -5,7 +5,7 @@ import { ServiceViewcountService } from '../services/service-viewcount.service';
 @Component({
   selector: 'app-headerbest-components',
   templateUrl: './headerbest-components.component.html',
-  styleUrls: ['./headerbest-components.component.css'],
+  styleUrls: ['./headerbest-components.component.scss'],
 })
 export class HeaderbestComponentsComponent implements OnInit {
   menuActive = false;

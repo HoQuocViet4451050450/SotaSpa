@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-cer-components',
   templateUrl: './cer-components.component.html',
-  styleUrls: ['./cer-components.component.css'],
+  styleUrls: ['./cer-components.component.scss'],
 })
 export class CerComponentsComponent {
   certifications = [

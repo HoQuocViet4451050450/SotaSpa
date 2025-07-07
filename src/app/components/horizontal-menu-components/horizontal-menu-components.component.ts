@@ -10,7 +10,7 @@ import { trigger, style, animate, transition } from '@angular/animations';
 @Component({
   selector: 'app-horizontal-menu-components',
   templateUrl: './horizontal-menu-components.component.html',
-  styleUrls: ['./horizontal-menu-components.component.css'],
+  styleUrls: ['./horizontal-menu-components.component.scss'],
   animations: [
     trigger('fadeSlideIn', [
       transition(':enter', [

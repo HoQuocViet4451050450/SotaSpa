@@ -5,7 +5,7 @@ import { ServiceAdvisoryService } from '../services/service-advisory.service';
 @Component({
   selector: 'app-datlich-components',
   templateUrl: './datlich-components.component.html',
-  styleUrls: ['./datlich-components.component.css'],
+  styleUrls: ['./datlich-components.component.scss'],
 })
 export class DatlichComponentsComponent implements OnInit {
   danhSachDichVu: any[] = [];

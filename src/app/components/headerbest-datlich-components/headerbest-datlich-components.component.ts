@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-headerbest-datlich-components',
   templateUrl: './headerbest-datlich-components.component.html',
-  styleUrls: ['./headerbest-datlich-components.component.css'],
+  styleUrls: ['./headerbest-datlich-components.component.scss'],
 })
 export class HeaderbestDatlichComponentsComponent {
   menuActive = false;

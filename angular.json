@@ -17,6 +17,9 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "baseHref": "./",
+            "allowedCommonJsDependencies": [
+  "leaflet"
+],
             "polyfills": [
               "zone.js"
             ],

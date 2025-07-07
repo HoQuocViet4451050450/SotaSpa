@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-headerbest-lienhe-components',
   templateUrl: './headerbest-lienhe-components.component.html',
-  styleUrls: ['./headerbest-lienhe-components.component.css'],
+  styleUrls: ['./headerbest-lienhe-components.component.scss'],
 })
 export class HeaderbestLienheComponentsComponent {
   menuActive = false;

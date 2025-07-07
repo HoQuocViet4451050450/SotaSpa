@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-promotion-components',
   templateUrl: './promotion-components.component.html',
-  styleUrls: ['./promotion-components.component.css'],
+  styleUrls: ['./promotion-components.component.scss'],
 })
 export class PromotionComponentsComponent {
   nhanVoucher() {

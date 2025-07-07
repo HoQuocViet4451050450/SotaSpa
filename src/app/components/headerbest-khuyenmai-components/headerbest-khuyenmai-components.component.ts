@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-headerbest-khuyenmai-components',
   templateUrl: './headerbest-khuyenmai-components.component.html',
-  styleUrls: ['./headerbest-khuyenmai-components.component.css'],
+  styleUrls: ['./headerbest-khuyenmai-components.component.scss'],
 })
 export class HeaderbestKhuyenmaiComponentsComponent {
   menuActive = false;

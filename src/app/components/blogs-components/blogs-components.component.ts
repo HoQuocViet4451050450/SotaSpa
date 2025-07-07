@@ -13,7 +13,7 @@ import { ServiceIdEncoderServiceService } from '../services/service-id-encoder-s
 @Component({
   selector: 'app-blogs-components',
   templateUrl: './blogs-components.component.html',
-  styleUrls: ['./blogs-components.component.css'],
+  styleUrls: ['./blogs-components.component.scss'],
   animations: [
     trigger('fadeSlideIn', [
       transition(':enter', [

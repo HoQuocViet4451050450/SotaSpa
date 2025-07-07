@@ -13,7 +13,7 @@ import { Title, Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-menu-components',
   templateUrl: './menu-components.component.html',
-  styleUrls: ['./menu-components.component.css'],
+  styleUrls: ['./menu-components.component.scss'],
   animations: [
     trigger('fadeSlideIn', [
       transition(':enter', [
