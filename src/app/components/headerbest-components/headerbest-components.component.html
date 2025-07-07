@@ -22,7 +22,19 @@
       <!-- Nút 3 gạch: hiện trên mobile -->
       <button class="menu-toggle" (click)="toggleMenu()">☰</button>
       <ul class="nav-list">
-
+  <li><a href="/">TRANG CHỦ</a></li>
+  <li><a href="/introduction">GIỚI THIỆU</a></li>
+  <li><a href="/menu">DỊCH VỤ</a></li>
+  <li><a href="/promotionPoster">KHUYẾN MẠI</a></li>
+  <li><a href="/blogPage">BLOG</a></li>
+  <li><a href="/lien-he">LIÊN HỆ</a></li>
+  <li><a href="/dat-lich">ĐẶT LỊCH NGAY</a></li>
+      </ul>
+    </nav>
+    <!-- Overlay menu -->
+    <div class="nav-overlay-responsive" [class.active]="menuActive">
+      <button class="close-btn" (click)="menuActive = false">✕</button>
+      <ul class="nav-list">
         <li><a (click)="navigateTo('')">TRANG CHỦ</a></li>
         <li><a (click)="navigateTo('introduction')">GIỚI THIỆU</a></li>
         <li><a (click)="navigateTo('menu')">DỊCH VỤ</a></li>
@@ -30,20 +42,6 @@
         <li><a (click)="navigateTo('blogPage')">BLOG</a></li>
         <li><a (click)="navigateTo('lien-he')">LIÊN HỆ</a></li>
         <li><a (click)="navigateTo('dat-lich')">ĐẶT LỊCH NGAY</a></li>
-      </ul>
-    </nav>
-    <!-- Overlay menu -->
-    <div class="nav-overlay-responsive" [class.active]="menuActive">
-      <button class="close-btn" (click)="menuActive = false">✕</button>
-      <ul class="nav-list">
-<li><a [routerLink]="['/']">TRANG CHỦ</a></li>
-<li><a [routerLink]="['/introduction']">GIỚI THIỆU</a></li>
-<li><a [routerLink]="['/menu']">DỊCH VỤ</a></li>
-<li><a [routerLink]="['/promotionPoster']">KHUYẾN MẠI</a></li>
-<li><a [routerLink]="['/blogPage']">BLOG</a></li>
-<li><a [routerLink]="['/lien-he']">LIÊN HỆ</a></li>
-<li><a [routerLink]="['/dat-lich']">ĐẶT LỊCH NGAY</a></li>
-
 
         <li class="view-counter" style="color: black; text-align: center;">
           [{{ visitCount }}] lượt xem trang
@@ -57,7 +55,9 @@
     </div>
 
     <div class="content">
-      <h1>Chào mừng đến với <br> <h1 style="color: #f1c40f;">Sota Spa 🌿</h1></h1>
+      <h1>Chào mừng đến với <br>
+        <h1 style="color: #f1c40f;">Sota Spa 🌿</h1>
+      </h1>
       <p>
         Trải nghiệm sự thư giãn và phục hồi tại Sota Spa — nơi yên bình hòa quyện với sự sang trọng.
         Hãy để cơ thể và tâm trí bạn được chăm sóc với các liệu trình spa cao cấp của chúng tôi. |
@@ -86,10 +86,11 @@
     <!-- Author Tag New -->
     <div class="author-tagnew" *ngIf="showAuthorTagNew">
       <button class="close-x" (click)="showAuthorTagNew = false">×</button>
-      Website này được xây dựng với mục đích demo. Mọi hình ảnh, nội dung, dịch vụ và chứng chỉ đều là giả lập và không đại diện cho một spa thực tế.
+      Website này được xây dựng với mục đích demo. Mọi hình ảnh, nội dung, dịch vụ và chứng chỉ đều là giả lập và không
+      đại diện cho một spa thực tế.
     </div>
 
-        <!-- Author Tag New -->
+    <!-- Author Tag New -->
     <div class="author-tagnew1" *ngIf="showAuthorTagNew1">
       <button class="close-x" (click)="showAuthorTagNew1 = false">×</button>
       Website này được thiết kế bởi Hưng Việt Phát Tech.
