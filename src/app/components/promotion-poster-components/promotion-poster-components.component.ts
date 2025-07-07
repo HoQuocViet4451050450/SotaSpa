@@ -74,13 +74,12 @@ export class PromotionPosterComponentsComponent
 
     this.meta.updateTag({
       property: 'og:image',
-      content:
-        'https://sotaspaofficial.onrender.com/assets/images/LogoNewR.jpg',
+      content: 'https://hungvietphat.io.vn/assets/images/LogoNewR.jpg',
     });
 
     this.meta.updateTag({
       property: 'og:url',
-      content: 'https://sotaspaofficial.onrender.com/#/promotion',
+      content: 'https://hungvietphat.io.vn/#/promotion',
     });
 
     this.meta.updateTag({ property: 'og:type', content: 'website' });

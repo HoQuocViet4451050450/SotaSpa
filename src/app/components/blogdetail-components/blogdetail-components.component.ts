@@ -42,55 +42,15 @@ export class BlogdetailComponentsComponent implements OnInit {
     private router: Router // <--- Inject Router for error handling/redirection
   ) {}
 
-  ngOnInit(): void {
-    // Use paramMap with switchMap for a reactive approach to route parameters.
-    // This is better than snapshot if the component can be reused with different IDs.
-    this.route.paramMap
-      .pipe(
-        switchMap((params) => {
-          // Get the 'encodedId' from the route parameters.
-          // Remember to update your routing module to use 'encodedId' instead of 'id'.
-          const encodedId = params.get('encodedId');
-
-          if (encodedId) {
-            // Decode the encoded string back to the original numeric ID
-            const originalId = this.idEncoderService.decodeId(encodedId);
-
-            if (originalId !== null) {
-              this.isLoading = true; // Set loading to true before fetching
-              // If decoding is successful, call your service to get blog details
-              return this.Service.getBlogDetail(originalId);
-            } else {
-              console.error(`Error: Could not decode encoded ID: ${encodedId}`);
-              // Handle invalid encoded ID, e.g., redirect to a 404 page or blog list
-              this.router.navigate(['/blog']); // Example: Redirect to blog list
-              return of(null); // <--- Changed from require('rxjs').of(null) to of(null)
-            }
-          } else {
-            console.error('Error: No encoded ID found in route parameters.');
-            // Handle missing encoded ID, e.g., redirect to a 404 page or blog list
-            this.router.navigate(['/blog']); // Example: Redirect to blog list
-            return of(null); // <--- Changed from require('rxjs').of(null) to of(null)
-          }
-        })
-      )
-      .subscribe({
-        next: (data) => {
-          if (data) {
-            this.blog = data;
-          } else {
-            // This block will be hit if an error occurred in switchMap and returned null
-            this.blog = null; // Ensure blog is null if data is not found/decoded
-          }
-          this.isLoading = false; // Set loading to false after data is received (or not)
-        },
-        error: (err) => {
-          console.error('Lỗi khi lấy blog chi tiết:', err);
-          this.blog = null; // Clear blog data on error
-          this.isLoading = false; // Set loading to false on error
-          // Optionally, redirect or show an error message to the user
-          this.router.navigate(['/blog']); // Example: Redirect on API error
-        },
-      });
+  ngOnInit() {
+    const encodedId = this.route.snapshot.paramMap.get('id');
+    if (encodedId) {
+      const originalId = this.idEncoderService.decodeId(encodedId);
+      if (originalId !== null) {
+        this.Service.getBlogDetail(originalId);
+      } else {
+        // Xử lý lỗi: id không hợp lệ
+      }
+    }
   }
 }

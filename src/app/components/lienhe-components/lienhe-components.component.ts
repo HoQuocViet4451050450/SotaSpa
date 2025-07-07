@@ -35,12 +35,11 @@ export class LienheComponentsComponent {
       },
       {
         property: 'og:image',
-        content:
-          'https://sotaspaofficial.onrender.com/assets/images/LogoNewR.jpg',
+        content: 'https://hungvietphat.io.vn/assets/images/LogoNewR.jpg',
       },
       {
         property: 'og:url',
-        content: 'https://sotaspaofficial.onrender.com/#/lien-he',
+        content: 'https://hungvietphat.io.vn/#/lien-he',
       },
       { property: 'og:type', content: 'website' },
     ]);

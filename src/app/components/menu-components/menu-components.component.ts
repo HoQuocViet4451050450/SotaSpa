@@ -69,12 +69,11 @@ export class MenuComponentsComponent implements OnInit, AfterViewInit {
       },
       {
         property: 'og:image',
-        content:
-          'https://sotaspaofficial.onrender.com/assets/images/LogoNewR.jpg',
+        content: 'https://hungvietphat.io.vn/assets/images/LogoNewR.jpg',
       },
       {
         property: 'og:url',
-        content: 'https://sotaspaofficial.onrender.com/#/menu',
+        content: 'https://hungvietphat.io.vn/#/menu',
       },
       { property: 'og:type', content: 'website' },
     ]);

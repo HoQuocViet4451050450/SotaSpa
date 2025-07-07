@@ -59,12 +59,11 @@ export class IntroductionComponentsComponent implements AfterViewInit {
       },
       {
         property: 'og:image',
-        content:
-          'https://sotaspaofficial.onrender.com/assets/images/LogoNewR.jpg',
+        content: 'https://hungvietphat.io.vn/assets/images/LogoNewR.jpg',
       },
       {
         property: 'og:url',
-        content: 'https://sotaspaofficial.onrender.com/#/introduction',
+        content: 'https://hungvietphat.io.vn/#/introduction',
       },
       { property: 'og:type', content: 'website' },
     ]);

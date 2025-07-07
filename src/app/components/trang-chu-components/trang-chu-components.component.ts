@@ -43,12 +43,11 @@ export class TrangChuComponentsComponent implements AfterViewInit, OnInit {
     });
     this.meta.updateTag({
       property: 'og:image',
-      content:
-        'https://sotaspaofficial.onrender.com/assets/images/LogoNewR.jpg',
+      content: 'https://hungvietphat.io.vn/assets/images/LogoNewR.jpg',
     });
     this.meta.updateTag({
       property: 'og:url',
-      content: 'https://sotaspaofficial.onrender.com/',
+      content: 'https://hungvietphat.io.vn/',
     });
   }
 
