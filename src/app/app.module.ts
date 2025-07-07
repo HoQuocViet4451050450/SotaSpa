@@ -36,7 +36,11 @@ import { HeaderbestDatlichComponentsComponent } from './components/headerbest-da
 import { DatlichComponentsComponent } from './components/datlich-components/datlich-components.component';
 import { SpaCounterEmployeeComponentsComponent } from './components/spa-counter-employee-components/spa-counter-employee-components.component';
 import { CerComponentsComponent } from './components/cer-components/cer-components.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import {
+  HashLocationStrategy,
+  LocationStrategy,
+  PathLocationStrategy,
+} from '@angular/common';
 const routes: Routes = [
   { path: '', component: TrangChuComponentsComponent },
   { path: 'auth', component: AuthComponentsComponent },
@@ -95,7 +99,7 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
