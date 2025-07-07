@@ -36,13 +36,14 @@
     <div class="nav-overlay-responsive" [class.active]="menuActive">
       <button class="close-btn" (click)="menuActive = false">✕</button>
       <ul class="nav-list">
-        <li><a (click)="navigateTo('')">TRANG CHỦ</a></li>
-        <li><a (click)="navigateTo('introduction')">GIỚI THIỆU</a></li>
-        <li><a (click)="navigateTo('menu')">DỊCH VỤ</a></li>
-        <li><a (click)="navigateTo('promotionPoster')">KHUYẾN MẠI</a></li>
-        <li><a (click)="navigateTo('blogPage')">BLOG</a></li>
-        <li><a (click)="navigateTo('lien-he')">LIÊN HỆ</a></li>
-        <li><a (click)="navigateTo('dat-lich')">ĐẶT LỊCH NGAY</a></li>
+<li><a [routerLink]="['/']">TRANG CHỦ</a></li>
+<li><a [routerLink]="['/introduction']">GIỚI THIỆU</a></li>
+<li><a [routerLink]="['/menu']">DỊCH VỤ</a></li>
+<li><a [routerLink]="['/promotionPoster']">KHUYẾN MẠI</a></li>
+<li><a [routerLink]="['/blogPage']">BLOG</a></li>
+<li><a [routerLink]="['/lien-he']">LIÊN HỆ</a></li>
+<li><a [routerLink]="['/dat-lich']">ĐẶT LỊCH NGAY</a></li>
+
 
         <li class="view-counter" style="color: black; text-align: center;">
           [{{ visitCount }}] lượt xem trang
