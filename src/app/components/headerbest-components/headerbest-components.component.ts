@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceViewcountService } from '../services/service-viewcount.service';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-headerbest-components',
@@ -18,12 +19,15 @@ export class HeaderbestComponentsComponent implements OnInit {
 
   constructor(
     private counterService: ServiceViewcountService,
-    private router: Router
+    private router: Router,
+    private viewportScroller: ViewportScroller
   ) {}
   toggleMenu(): void {
     this.menuActive = !this.menuActive;
   }
-
+  scrollToSection(sectionId: string): void {
+    this.viewportScroller.scrollToAnchor(sectionId);
+  }
   navigateTo(path: string) {
     this.router.navigate([`/${path}`]);
   }
